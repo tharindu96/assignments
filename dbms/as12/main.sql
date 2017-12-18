@@ -69,8 +69,47 @@ delimiter ;
 delimiter //
 create procedure project_details(IN leader varchar(200))
 begin
-	select p_description, work.* from project, work where w_leader = leader and w_p_code = p_code;
+	select * from project, work where w_leader = leader and w_p_code = p_code;
+end//
+delimiter ;
+
+-- if statement
+delimiter //
+create procedure persons_count1()
+begin
+	declare x int;
+	select sum(w_persons) into x from work;
+
+	if x > 20 then
+	select "Too many workers...";
+	else
+	select "Not much workers...";
+	end if;
+end//
+delimiter ;
+
+delimiter //
+create procedure persons_count2()
+begin
+	declare x,y,z int;
+	select COUNT(*) into x from work where w_persons > 10;
+	select COUNT(*) into y from work where w_persons > 20;
+	select "Projects above 10 workers = ", x;
+	select "Projects above 20 workers = ", y;
+
+	set z = x + y;
+	select "Sum of x and y = ", z;
+
+	if x > y then
+	select "Many projects are big";
+	else
+	select "Many projects are small";
+	end if;
 end//
 delimiter ;
 
 call project_details('Silva');
+
+call persons_count1();
+
+call persons_count2();
