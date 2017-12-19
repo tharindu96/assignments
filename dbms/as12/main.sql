@@ -108,8 +108,35 @@ begin
 end//
 delimiter ;
 
+delimiter //
+create procedure do_repeat()
+begin
+	declare x int;
+	set x = 0;
+	repeat
+		select 'Hello';
+		set x = x + 1;
+	until x > 5
+	end repeat;
+end//
+
+delimiter //
+create procedure do_while()
+begin
+	declare v1 int default 5;
+	while v1 > 0 do
+	      select v1;
+	      set v1 = v1 - 1;
+	end while;
+end//
+delimiter ;
+
 call project_details('Silva');
 
 call persons_count1();
 
 call persons_count2();
+
+call do_repeat();
+
+call do_while();
