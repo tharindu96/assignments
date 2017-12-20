@@ -15,10 +15,10 @@ void disp(int *arr, int n) {
 int main() {
 
     int arr[] = {
-	32, 6, 3, 45, 5, 46, 7, 8, 9, 10
+	32, 6, 3, 45, 5, 46, 7, 8, 9, 10, 2
     };
 
-    int n = 10;
+    int n = 11;
 
     disp(arr, n);
 
