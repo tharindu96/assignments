@@ -8,5 +8,5 @@ fi
 
 n=$1
 
-gcc -o $n $n.c
+gcc -o $n -g -g3 $n.c
 ./$n
