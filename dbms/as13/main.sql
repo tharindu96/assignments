@@ -117,21 +117,17 @@ where done_by = (
 
 -- 16
 
-select test_name as 'Tests done by Gamage and Tusitha'
+select test_name as 'Tests done by Gamage and Thusith'
 from testing_info
-where lab_code in (
-      select lab_code
-      from report_info
-      where done_by in (
-      	    select tec_code
-	    from lab_tecnician
-	    where tec_name = 'Gamage'
-	    union
-	    select tec_code
-	    from lab_tecnician
-	    where tec_name = 'Tusitha'
-      )
-);
+left join report_info on report_info.lab_code = testing_info.lab_code
+left join lab_tecnician on lab_tecnician.tec_code = report_info.done_by
+where tec_name = 'Gamage'
+union
+select test_name
+from testing_info
+left join report_info on report_info.lab_code = testing_info.lab_code
+left join lab_tecnician on lab_tecnician.tec_code = report_info.done_by
+where tec_name = 'Thusith';
 
 -- 17
 
