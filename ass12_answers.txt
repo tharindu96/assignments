@@ -1,0 +1,397 @@
+==== 01 ====
+--------------
+create database s9935medi;
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+
+==== 02 ====
+--------------
+create table testing_info (
+       lab_code char(5),
+       test_name varchar(25),
+       sample varchar(15),
+       time_taken time,
+       price int,
+       primary key (lab_code)
+);
+--------------
+
+Query OK, 0 rows affected (0.01 sec)
+
+
+==== 03 ====
+--------------
+describe testing_info;
+--------------
+
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| lab_code   | char(5)     | NO   | PRI | NULL    |       |
+| test_name  | varchar(25) | YES  |     | NULL    |       |
+| sample     | varchar(15) | YES  |     | NULL    |       |
+| time_taken | time        | YES  |     | NULL    |       |
+| price      | int(11)     | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+==== 04 ====
+--------------
+insert into testing_info values
+('FBC', 'Full Blood Count', 'Blood', '00:45:00', 400),
+('FBS', 'Fasting blood sugar', 'Blood', '01:15:00', 350),
+('UDS', 'urine drug screen', 'Urine', NULL, 550),
+('UA', 'urinalysis', 'Urine', '02:30:00', 425),
+('STLC', 'stool culture', 'Stool', '48:00:00', 700);
+--------------
+
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+==== 05 ====
+--------------
+select lab_code, sample, price
+from testing_info;
+--------------
+
++----------+--------+-------+
+| lab_code | sample | price |
++----------+--------+-------+
+| FBC      | Blood  |   400 |
+| FBS      | Blood  |   350 |
+| STLC     | Stool  |   700 |
+| UA       | Urine  |   425 |
+| UDS      | Urine  |   550 |
++----------+--------+-------+
+5 rows in set (0.00 sec)
+
+
+==== 07 ====
+--------------
+select lab_code, sample
+from testing_info
+where sample = 'Blood';
+--------------
+
++----------+--------+
+| lab_code | sample |
++----------+--------+
+| FBC      | Blood  |
+| FBS      | Blood  |
++----------+--------+
+2 rows in set (0.00 sec)
+
+
+==== 07 ====
+--------------
+select test_name, sample
+from testing_info
+order by sample desc;
+--------------
+
++---------------------+--------+
+| test_name           | sample |
++---------------------+--------+
+| urinalysis          | Urine  |
+| urine drug screen   | Urine  |
+| stool culture       | Stool  |
+| Full Blood Count    | Blood  |
+| Fasting blood sugar | Blood  |
++---------------------+--------+
+5 rows in set (0.01 sec)
+
+
+==== 08 ====
+--------------
+select distinct sample
+from testing_info;
+--------------
+
++--------+
+| sample |
++--------+
+| Blood  |
+| Stool  |
+| Urine  |
++--------+
+3 rows in set (0.00 sec)
+
+
+==== 09 ====
+--------------
+create table lab_tecnician (
+       tec_code char(4),
+       tec_name varchar(25),
+       primary key(tec_code)
+);
+--------------
+
+Query OK, 0 rows affected (0.01 sec)
+
+
+==== 10 ====
+--------------
+insert into lab_tecnician values
+('t01', 'Thusith'),
+('t02', 'Isadhi'),
+('t03', 'Gamage');
+--------------
+
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+
+==== 11 ====
+--------------
+create table report_info (
+       patient_name varchar(50),
+       lab_code char(5),
+       done_by char(4),
+       test_date date,
+       issuing_status enum('N', 'Y'),
+       foreign key (lab_code) references testing_info(lab_code),
+       foreign key (done_by) references lab_tecnician(tec_code)
+);
+--------------
+
+Query OK, 0 rows affected (0.04 sec)
+
+
+==== 12 ====
+--------------
+insert into report_info values
+('K.D. Perera', 'FBS', 't01', '2016-09-21', 'N'),
+('T. Samarathunga', 'UDS', 't03', '2016-09-21', 'Y'),
+('O.P. Sugandi', 'STLC', 't03', '2016-09-22', 'N'),
+('B. Kumai', 'FBS', 't01', '2016-09-23', 'Y'),
+('T.K. Ranaweera', 'FBC', 't02', '2016-09-24', 'Y');
+--------------
+
+Query OK, 5 rows affected (0.00 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+==== 13 ====
+--------------
+select constraint_name, constraint_type
+from information_schema.table_constraints
+where constraint_schema = 's9935medi';
+--------------
+
++--------------------+-----------------+
+| constraint_name    | constraint_type |
++--------------------+-----------------+
+| PRIMARY            | PRIMARY KEY     |
+| report_info_ibfk_1 | FOREIGN KEY     |
+| report_info_ibfk_2 | FOREIGN KEY     |
+| PRIMARY            | PRIMARY KEY     |
++--------------------+-----------------+
+4 rows in set (0.01 sec)
+
+
+==== 14 ====
+--------------
+select count(*) as '# of tests', test_date
+from report_info
+group by test_date;
+--------------
+
++------------+------------+
+| # of tests | test_date  |
++------------+------------+
+|          2 | 2016-09-21 |
+|          1 | 2016-09-22 |
+|          1 | 2016-09-23 |
+|          1 | 2016-09-24 |
++------------+------------+
+4 rows in set (0.00 sec)
+
+
+==== 15 ====
+--------------
+select count(*) as '# of tests done by Gamage'
+from report_info
+where done_by = (
+      select tec_code
+      from lab_tecnician
+      where tec_name = 'Gamage'
+);
+--------------
+
++---------------------------+
+| # of tests done by Gamage |
++---------------------------+
+|                         2 |
++---------------------------+
+1 row in set (0.00 sec)
+
+
+==== 16 ====
+--------------
+select test_name as 'Tests done by Gamage and Tusitha'
+from testing_info
+where lab_code in (
+      select lab_code
+      from report_info
+      where done_by in (
+      	    select tec_code
+	    from lab_tecnician
+	    where tec_name = 'Gamage'
+	    union
+	    select tec_code
+	    from lab_tecnician
+	    where tec_name = 'Tusitha'
+      )
+);
+--------------
+
++----------------------------------+
+| Tests done by Gamage and Tusitha |
++----------------------------------+
+| stool culture                    |
+| urine drug screen                |
++----------------------------------+
+2 rows in set (0.00 sec)
+
+
+==== 17 ====
+--------------
+select test_name as 'Tests done on 2016-09-21'
+from testing_info
+where lab_code in (
+      select lab_code
+      from report_info
+      where test_date = '2016-09-21'
+);
+--------------
+
++--------------------------+
+| Tests done on 2016-09-21 |
++--------------------------+
+| Fasting blood sugar      |
+| urine drug screen        |
++--------------------------+
+2 rows in set (0.00 sec)
+
+
+==== 18 ====
+--------------
+select patient_name
+from report_info
+left join testing_info on report_info.lab_code = testing_info.lab_code
+where
+	sample = 'Blood' and
+	time_taken < '03:00:00';
+--------------
+
++----------------+
+| patient_name   |
++----------------+
+| T.K. Ranaweera |
+| K.D. Perera    |
+| B. Kumai       |
++----------------+
+3 rows in set (0.00 sec)
+
+
+==== 19 ====
+--------------
+select patient_name
+from report_info
+left join testing_info on report_info.lab_code = testing_info.lab_code
+where
+	sample = 'Blood' and
+	test_date = '2016-09-23';
+--------------
+
++--------------+
+| patient_name |
++--------------+
+| B. Kumai     |
++--------------+
+1 row in set (0.00 sec)
+
+
+==== 20 ====
+--------------
+update testing_info
+set price = price + 50
+where sample = 'Blood';
+--------------
+
+Query OK, 2 rows affected (0.00 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+
+==== 21 ====
+--------------
+select SUM(price) as 'income', test_date
+from report_info
+left join testing_info on report_info.lab_code = testing_info.lab_code
+where
+	(test_date = '2016-09-21' or test_date = '2016-09-22')
+group by test_date;
+--------------
+
++--------+------------+
+| income | test_date  |
++--------+------------+
+|    950 | 2016-09-21 |
+|    700 | 2016-09-22 |
++--------+------------+
+2 rows in set (0.00 sec)
+
+
+==== 22 ====
+--------------
+delimiter //
+create procedure get_test_count_by_technician(name varchar(25))
+begin
+	declare tcode char(4);
+	select tec_code into tcode from lab_tecnician where tec_name = name;
+	select count(*) as '# of tests' from report_info where done_by = tcode;
+end//
+delimiter ;
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+==== 23 ====
+--------------
+call get_test_count_by_technician('Gamage');
+--------------
+
++------------+
+| # of tests |
++------------+
+|          2 |
++------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+
+
+==== 24 ====
+--------------
+delete from report_info
+where lab_code in (
+      select lab_code
+      from testing_info
+      where sample = 'Blood'
+);
+--------------
+
+Query OK, 3 rows affected (0.00 sec)
+
+
+==== 25 ====
+--------------
+drop table report_info;
+--------------
+
+Query OK, 0 rows affected (0.01 sec)
