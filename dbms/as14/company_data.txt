@@ -1,4 +1,4 @@
-c01	Ruwan Enterprise
-c02	Indra Traders
-c03	Weels Lanka
-c04	Toyota Lanka
+c01,Ruwan Enterprise
+c02,Indra Traders
+c03,Weels Lanka
+c04,Toyota Lanka
