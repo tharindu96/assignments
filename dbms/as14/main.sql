@@ -17,14 +17,12 @@ CREATE TABLE company (
 CREATE TABLE vehicle (
        v_code CHAR(3),
        v_brand VARCHAR(50),
-       v_type VARCHAR(50),
-       FOREIGN KEY(v_code) REFERENCES company(c_code)
+       v_type VARCHAR(50)
 );
 
 CREATE TABLE repair (
        r_c_code CHAR(3),
-       r_type VARCHAR(50),
-       FOREIGN KEY(r_c_code) REFERENCES company(c_code)
+       r_type VARCHAR(50)
 );
 
 INSERT INTO company
@@ -174,4 +172,5 @@ WHERE 1;
 
 -- 20
 
-
+LOAD DATA LOCAL INFILE './company_data.txt'
+REPLACE INTO TABLE company;
