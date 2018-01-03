@@ -81,6 +81,7 @@ int main()
     return 0;
 }
 
+// initialize the queue
 int QueueInit(PrintjobQueue *queue, int size)
 {
     queue->front = -1;
@@ -89,6 +90,7 @@ int QueueInit(PrintjobQueue *queue, int size)
     queue->data = (Printjob*) malloc(sizeof(Printjob)*size);
 }
 
+// delete the queue safely
 void QueueDelete(PrintjobQueue *queue)
 {
     free(queue->data);
@@ -98,6 +100,7 @@ void QueueDelete(PrintjobQueue *queue)
     queue->size = 0;
 }
 
+// check if queue is full
 int QueueIsFull(PrintjobQueue *queue)
 {
     if(queue->rear >= queue->size - 1)
@@ -105,6 +108,7 @@ int QueueIsFull(PrintjobQueue *queue)
     return 0;
 }
 
+// check if queue is empty
 int QueueIsEmpty(PrintjobQueue *queue)
 {
     if(queue->front == queue->rear)
@@ -112,6 +116,7 @@ int QueueIsEmpty(PrintjobQueue *queue)
     return 0;
 }
 
+// enqueue to the queue
 int QueueInsert(PrintjobQueue *queue, Printjob *printjob)
 {
     if(QueueIsFull(queue))
@@ -125,6 +130,7 @@ int QueueInsert(PrintjobQueue *queue, Printjob *printjob)
     return 1;
 }
 
+// dequeue from the queue
 int QueueRemove(PrintjobQueue *queue, Printjob *printjob)
 {
     if(QueueIsEmpty(queue))
