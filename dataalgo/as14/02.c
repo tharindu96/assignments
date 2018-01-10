@@ -2,11 +2,13 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAX_NAME 50
+#define MAX_ACCN 50
 
 typedef struct
 {
-    char name[50];
-    char accn[50];
+    char name[MAX_NAME + 1];
+    char accn[MAX_ACCN + 1];
 } Customer;
 
 typedef struct _Node
@@ -33,8 +35,45 @@ int QueueCount(Queue *q);
 
 void QueueDisplay(Queue *q);
 
+void CustomerDisplay(Customer *c);
+void CustomerInsert(Customer *c);
+
 int main()
 {
+    Queue q;
+    Customer c;
+    int i;
+    
+    QueueInit(&q);
+
+    for(i = 0; i < 5; i++)
+    {
+	CustomerInsert(&c);
+	QueueEnqueue(&q, &c);
+    }
+
+    QueueDisplay(&q);
+    printf("Count: %d\n", QueueCount(&q));
+
+    printf("\n********** Dequeue One Customer ************\n");
+    QueueDequeue(&q, &c);
+    CustomerDisplay(&c);
+
+    QueueDisplay(&q);
+    printf("Count: %d\n", QueueCount(&q));
+
+    printf("\n********* Two more customers *************\n");
+    
+    for(i = 0; i < 2; i++)
+    {
+	CustomerInsert(&c);
+	QueueEnqueue(&q, &c);
+    }
+
+    QueueDisplay(&q);
+    printf("Count: %d\n", QueueCount(&q));    
+    
+    QueueDestroy(&q);
 
     return 0;
 }
@@ -70,8 +109,16 @@ int QueueEnqueue(Queue *q, Customer *c)
     Node *n = (Node *)malloc(sizeof(Node));
     memcpy(&n->customer, c, sizeof(Customer));
     n->next = NULL;
-    q->tail->next = n;
-    q->tail = n;
+    if(q->count == 0)
+    {
+	q->head = n;
+	q->tail = n;
+    }
+    else
+    {
+	q->tail->next = n;
+	q->tail = n;
+    }
     q->count++;
     return 1;
 }
@@ -106,10 +153,31 @@ void CustomerDisplay(Customer *c)
 {
     printf("**** Customer ****\n");
     printf("Name: %s\n", c->name);
-    printf("ACCN: %s\n", c->accn);
+    printf("ACCN: %s\n\n", c->accn);
 }
 
 void QueueDisplay(Queue *q)
 {
+    Node *n = q->head;
+    printf("\n********** Displaying the Queue ***********\n");
+    while(n != NULL)
+    {
+	CustomerDisplay(&n->customer);
+	n = n->next;
+    }
+}
+
+void CustomerInsert(Customer *c)
+{
     
+    printf("\n********** Insert Customer ***********\n");
+    printf("Enter Customer Name: ");
+    scanf("%[^\n]s", c->name);
+    printf("Enter Customer ACCN: ");
+    scanf("%s", c->accn);
+    c->name[MAX_NAME] = '\0';
+    c->accn[MAX_ACCN] = '\0';
+
+    char k;
+    while ((k = getchar()) != '\n' && k != EOF) { }
 }
