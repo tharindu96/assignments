@@ -1,0 +1,128 @@
+x - [-2*pi:pi/32:2*pi];
+{Undefined function or variable 'x'.
+} 
+x = [-2*pi:pi/64:2*pi];
+y1 = sin(x);
+y2 = sin(x-0.25);
+y3 = sin(x-0.5);
+plot(x, y1, x, y2, x, y3);
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)');
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)', 2);
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)', 2);
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)', -1);
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)');
+clf
+plot(x, y1, x, y2, x, y3);
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)', 2);
+clf
+plot(x, y1, x, y2, x, y3);
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)', -1);
+help legend
+ <strong>legend</strong> Display legend.
+    <strong>legend</strong>(string1,string2,string3, ...) puts a legend on the current plot
+    using the specified strings as labels. <strong>legend</strong> works on line graphs,
+    bar graphs, pie graphs, ribbon plots, etc.  You can label any
+    solid-colored patch or surface object.  The fontsize and fontname for
+    the legend strings matches the axes fontsize and fontname.
+ 
+    <strong>legend</strong>(H,string1,string2,string3, ...) puts a legend on the plot
+    containing the handles in the vector H using the specified strings as
+    labels for the corresponding handles.
+ 
+    <strong>legend</strong>(M), where M is a string matrix or cell array of strings, and
+    <strong>legend</strong>(H,M) where H is a vector of handles to lines and patches also
+    works.
+ 
+    <strong>legend</strong>(AX,...) puts a legend on the axes with handle AX.
+ 
+    <strong>legend</strong> OFF removes the legend from the current axes and deletes
+    the legend handle.
+    <strong>legend</strong>(AX,'off') removes the legend from the axis AX.
+ 
+    <strong>legend</strong> TOGGLE toggles legend on or off.  If no legend exists for the
+    current axes one is created using default strings. The default
+    string for an object is the value of the DisplayName property
+    if it is non-empty and otherwise it is a string of the form
+    'data1','data2', etc.
+    <strong>legend</strong>(AX,'toggle') toggles legend for axes AX
+ 
+    <strong>legend</strong> HIDE makes legend invisible.
+    <strong>legend</strong>(AX,'hide') makes legend on axes AX invisible.
+    <strong>legend</strong> SHOW makes legend visible. If no legend exists for the
+    current axes one is created using default strings.
+    <strong>legend</strong>(AX,'show') makes legend on axes AX visible.
+ 
+    <strong>legend</strong> BOXOFF  makes legend background box invisible when legend is
+    visible.
+    <strong>legend</strong>(AX,'boxoff') for axes AX makes legend background box invisible when
+    legend is visible.
+    <strong>legend</strong> BOXON makes legend background box visible when legend is visible.
+    <strong>legend</strong>(AX,'boxon') for axes AX making legend background box visible when
+    legend is visible.
+ 
+    LEGH = <strong>legend</strong> returns the handle to legend on the current axes or
+    empty if none exists.
+ 
+ 
+    <strong>legend</strong>(...,'Location',LOC) adds a legend in the specified
+    location, LOC, with respect to the axes.  LOC may be either a
+    1x4 position vector or one of the following strings:
+        'North'              inside plot box near top
+        'South'              inside bottom
+        'East'               inside right
+        'West'               inside left
+        'NorthEast'          inside top right (default for 2-D plots)
+        'NorthWest'           inside top left
+        'SouthEast'          inside bottom right
+        'SouthWest'          inside bottom left
+        'NorthOutside'       outside plot box near top
+        'SouthOutside'       outside bottom
+        'EastOutside'        outside right
+        'WestOutside'        outside left
+        'NorthEastOutside'   outside top right (default for 3-D plots)
+        'NorthWestOutside'   outside top left
+        'SouthEastOutside'   outside bottom right
+        'SouthWestOutside'   outside bottom left
+        'Best'               least conflict with data in plot
+        'BestOutside'        least unused space outside plot
+    If the legend does not fit in the 1x4 position vector the position
+    vector is resized around the midpoint to fit the preferred legend size.
+    Moving the legend manually by dragging with the mouse or setting
+    the Position property will set the legend Location property to 'none'.
+ 
+    <strong>legend</strong>(...,'Orientation',ORIENTATION) creates a legend with the
+    legend items arranged in the specified ORIENTATION. Allowed
+    values for ORIENTATION are 'vertical' (the default) and 'horizontal'.
+ 
+    [LEGH,OBJH,OUTH,OUTM] = <strong>legend</strong>(...) returns a handle LEGH to the
+    legend axes; a vector OBJH containing handles for the text, lines,
+    and patches in the legend; a vector OUTH of handles to the
+    lines and patches in the plot; and a cell array OUTM containing
+    the text in the legend.
+ 
+    Examples:
+        x = 0:.2:12;
+        plot(x,besselj(1,x),x,besselj(2,x),x,besselj(3,x));
+        legend('First','Second','Third','Location','NorthEastOutside')
+ 
+        b = bar(rand(10,5),'stacked'); colormap(summer); hold on
+        x = plot(1:10,5*rand(10,1),'marker','square','markersize',12,...
+                 'markeredgecolor','y','markerfacecolor',[.6 0 .6],...
+                 'linestyle','-','color','r','linewidth',2); hold off
+        legend([b,x],'Carrots','Peas','Peppers','Green Beans',...
+                  'Cucumbers','Eggplant')
+
+    Reference page in Help browser
+       <a href="matlab:doc legend">doc legend</a>
+
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)', 'SouthEast');
+[Warning: Ignoring extra legend entries.] 
+[> In legendHGUsingMATLABClasses>set_children_and_strings (line 650)
+  In legendHGUsingMATLABClasses>make_legend (line 313)
+  In legendHGUsingMATLABClasses (line 241)
+  In <a href="matlab:matlab.internal.language.introspective.errorDocCallback('legend', 'C:\Program Files\MATLAB\MATLAB Production Server\R2015a\toolbox\matlab\scribe\legend.p', 118)" style="font-weight:bold">legend</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\MATLAB Production Server\R2015a\toolbox\matlab\scribe\legend.p',118,0)">line 118</a>)] 
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)', 'Location', 'SouthEast');
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)', -1);
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)', 2);
+legend('sin(x)', 'sin(x-0.25)', 'sin(x-0.5)', 'Location', 'SouthEast');
+diary off

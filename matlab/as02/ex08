@@ -1,0 +1,9 @@
+x = [-2*pi:pi/32:2*pi];
+y = 5 * cos(x.^2 + 1);
+plot(x, y);
+title('f(x) = 5 * cos(x^2+1)');
+xlabel('x');
+ylabel('5*cos(x^2+1)');
+text(0, 1, 'Hello World');
+gtext('H');
+diary off

@@ -1,0 +1,14 @@
+x = [0:0.01:100];
+x = [0:0.001:10];
+y1 = sin(x)/x;
+y1 = sin(x.*1)/x;
+x = [0:0.001:10];
+y1 = sin(x)./x;
+y2 = sin(2*x)./x;
+y3 = sin(3*x)./x;
+y4 = sin(4*x)./x;
+y5 = sin(5*x)./x;
+plot(x, y1, x, y2, x, y3, x, y4, x, y5);
+legend('n=1', 'n=2', 'n=3', 'n=4', 'n=5');
+title('f(x)=sin(n*x)/x');
+diary off

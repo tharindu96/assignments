@@ -1,0 +1,19 @@
+x = [0:0.1:10];
+y = x^2 - 10*x +15;
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mpower')" style="font-weight:bold"> ^ </a>
+Inputs must be a scalar and a square matrix.
+To compute elementwise POWER, use POWER (.^) instead.
+} 
+y = x^2 - 10.*x +15;
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mpower')" style="font-weight:bold"> ^ </a>
+Inputs must be a scalar and a square matrix.
+To compute elementwise POWER, use POWER (.^) instead.
+} 
+y = x.^2 - 10.*x +15;
+figure
+plot(x, y, 'r--')
+title('Y = X^2 - 10*X + 15')
+xlabel('X')
+ylabel('Y')
+grid on
+diary off

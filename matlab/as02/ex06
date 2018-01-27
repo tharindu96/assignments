@@ -1,0 +1,12 @@
+xa = [-pi:0.5:pi];
+xb = [-pi:0.1:pi];
+xc = [-pi:0.01:pi];
+ya = sin(xa);
+yb = sin(xb);
+yc = sin(xc);
+plot(xa, ya);
+hold
+Current plot held
+plot(xb, yb, 'ro');
+plot(xc, yc, 'gx');
+diary off

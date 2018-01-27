@@ -1,0 +1,5 @@
+x = [0:pi/32:2*pi];
+y = sin(2*x);
+dy = 2*cos(2*x);
+plot(x, y, x, dy);
+diary off

@@ -1,0 +1,27 @@
+x = [0:0.0001:4*pi];
+x = [0:0.001:4*pi];
+y1 = cos(x);
+y2 = 1 - (1/2)*(x.^2);
+y3 = sin(x.^2)^2;
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mpower')" style="font-weight:bold"> ^ </a>
+Inputs must be a scalar and a square matrix.
+To compute elementwise POWER, use POWER (.^) instead.
+} 
+y3 = sin(x.^2).^2;
+subplot(1, 3, 1);
+subplot(3, 1, 1);
+plot(x, y1);
+title('f(x)=cos(x)');
+xlabel('x');
+ylabel('cos(x)');
+subplot(3, 1, 2);
+plot(x, y2);
+title('f(x) = 1 - (1/2)*x^2');
+xlabel('x');
+ylabel('1 - 1/2*x^2');
+subplot(3, 1, 3);
+plot(x, y3);
+title('f(x)=sin(x^2)^2');
+xlabel('x');
+ylabel('sin(x^2)^2');
+diary off

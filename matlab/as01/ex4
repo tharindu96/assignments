@@ -1,0 +1,214 @@
+A = [2 4 1; 6 7 2; 3 6 9]
+
+A =
+
+     2     4     1
+     6     7     2
+     3     6     9
+
+x1 = A(1;:)
+ x1 = A(1;:)
+         |
+{Error: Unbalanced or unexpected parenthesis or bracket.
+} 
+x1 = A(1,:)
+
+x1 =
+
+     2     4     1
+
+y = A([end-1 end], :)
+
+y =
+
+     6     7     2
+     3     6     9
+
+sum(A())
+
+ans =
+
+    11    17    12
+
+sum(A)
+
+ans =
+
+    11    17    12
+
+sum(A(:))
+
+ans =
+
+    40
+
+sum(A(1, :))
+
+ans =
+
+     7
+
+sum(A(:, :))
+
+ans =
+
+    11    17    12
+
+sum(A)
+
+ans =
+
+    11    17    12
+
+sum(A, row)
+{Undefined function or variable 'row'.
+} 
+sum(A, rows)
+{Undefined function or variable 'rows'.
+} 
+help sum
+ <strong>sum</strong> Sum of elements.
+    S = <strong>sum</strong>(X) is the sum of the elements of the vector X. If X is a matrix,
+    S is a row vector with the sum over each column. For N-D arrays, 
+    <strong>sum</strong>(X) operates along the first non-singleton dimension.
+ 
+    S = <strong>sum</strong>(X,DIM) sums along the dimension DIM. 
+ 
+    S = <strong>sum</strong>(..., TYPE) specifies the type in which the 
+    sum is performed, and the type of S. Available options are:
+ 
+    'double'    -  S has class double for any input X
+    'native'    -  S has the same class as X
+    'default'   -  If X is floating point, that is double or single,
+                   S has the same class as X. If X is not floating point, 
+                   S has class double.
+ 
+    S = <strong>sum</strong>(..., MISSING) specifies how NaN (Not-A-Number) values are 
+    treated. The default is 'includenan':
+ 
+    'includenan' - the sum of a vector containing NaN values is also NaN.
+    'omitnan'    - the sum of a vector containing NaN values
+                   is the sum of all its non-NaN elements. If all 
+                   elements are NaN, the result is 0.
+ 
+    Examples:
+    If   X = [0 1 2; 3 4 5]
+    then sum(X, 1) is [3 5 7] and sum(X, 2) is [3; 12]
+ 
+    If X = int8(1:20) then sum(X) accumulates in double and the
+    result is double(210) while sum(X,'native') accumulates in
+    int8, but overflows and saturates to int8(127).
+ 
+    See also <a href="matlab:help prod">prod</a>, <a href="matlab:help cumsum">cumsum</a>, <a href="matlab:help diff">diff</a>, <a href="matlab:help accumarray">accumarray</a>, <a href="matlab:help isfloat">isfloat</a>.
+
+    <a href="matlab:matlab.internal.language.introspective.displayOverloads('sum')">Other functions named sum</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc sum">doc sum</a>
+
+sum(A, 1)
+
+ans =
+
+    11    17    12
+
+sum(A, 2)
+
+ans =
+
+     7
+    15
+    18
+
+diag
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('diag')" style="font-weight:bold">diag</a>
+Not enough input arguments.
+} 
+help diag
+ <strong>diag</strong> Diagonal matrices and diagonals of a matrix.
+    <strong>diag</strong>(V,K) when V is a vector with N components is a square matrix
+    of order N+ABS(K) with the elements of V on the K-th diagonal. K = 0
+    is the main diagonal, K > 0 is above the main diagonal and K < 0
+    is below the main diagonal. 
+ 
+    <strong>diag</strong>(V) is the same as <strong>diag</strong>(V,0) and puts V on the main diagonal.
+ 
+    <strong>diag</strong>(X,K) when X is a matrix is a column vector formed from
+    the elements of the K-th diagonal of X.
+ 
+    <strong>diag</strong>(X) is the main diagonal of X. <strong>diag</strong>(<strong>diag</strong>(X)) is a diagonal matrix.
+ 
+    Example
+       m = 5;
+       diag(-m:m) + diag(ones(2*m,1),1) + diag(ones(2*m,1),-1)
+    produces a tridiagonal matrix of order 2*m+1.
+ 
+    See also <a href="matlab:help spdiags">spdiags</a>, <a href="matlab:help triu">triu</a>, <a href="matlab:help tril">tril</a>, <a href="matlab:help blkdiag">blkdiag</a>.
+
+    <a href="matlab:matlab.internal.language.introspective.displayOverloads('diag')">Other functions named diag</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc diag">doc diag</a>
+
+A(:, :)
+
+ans =
+
+     2     4     1
+     6     7     2
+     3     6     9
+
+diag(A)
+
+ans =
+
+     2
+     7
+     9
+
+B = [1:7; 9:-2:-3; 4:(256-4)/7:256
+B = [1:7; 9:-2:-3; 4:(256-4)/7:256]
+ B = [1:7; 9:-2:-3; 4:(256-4)/7:256]
+   |
+{Error: The expression to the left of the equals sign is not a valid target for an assignment.
+} 
+B = [1:7; 9:-2:-3]
+
+B =
+
+     1     2     3     4     5     6     7
+     9     7     5     3     1    -1    -3
+
+B = [1:7; 9:-2:-3; linspace(4, 256, 7)]
+
+B =
+
+     1     2     3     4     5     6     7
+     9     7     5     3     1    -1    -3
+     4    46    88   130   172   214   256
+
+B = [1:7; 9:-2:-3; 4.^(2:7)]
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('vertcat')" style="font-weight:bold">vertcat</a>
+Dimensions of matrices being concatenated are not consistent.
+} 
+2.^(4:8)
+
+ans =
+
+    16    32    64   128   256
+
+2.^(2:8)
+
+ans =
+
+     4     8    16    32    64   128   256
+
+B = [1:7; 9:-2:-3; 2.^(2:8)]
+
+B =
+
+     1     2     3     4     5     6     7
+     9     7     5     3     1    -1    -3
+     4     8    16    32    64   128   256
+
+diary off

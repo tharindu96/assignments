@@ -1,0 +1,13 @@
+x = [0.01:0.0001:0.1];
+y = sin(1./x);
+plot(x, y);
+semilogy(x, y);
+[Warning: Negative data ignored] 
+plot(x, y);
+x = [0.01:0.001:0.1];
+y = sin(1./x);
+plot(x, y);
+x = [0.01:0.0001:0.1];
+y = sin(1./x);
+plot(x, y);
+diary off

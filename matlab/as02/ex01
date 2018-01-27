@@ -1,0 +1,160 @@
+x = [0:0.5:10]
+
+x =
+
+  Columns 1 through 11
+
+         0    0.5000    1.0000    1.5000    2.0000    2.5000    3.0000    3.5000    4.0000    4.5000    5.0000
+
+  Columns 12 through 21
+
+    5.5000    6.0000    6.5000    7.0000    7.5000    8.0000    8.5000    9.0000    9.5000   10.0000
+
+y = exp(-0.05*x).*cos(5*x);
+plot(x, y)
+plot(x, y);
+plot(x, y, 'r');
+plot(x, y, 'g');
+plot(x, y, 'm--');
+plot(x, y, 'g*');
+plot(x, y, 'g**');
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('plot')" style="font-weight:bold">plot</a>
+Error in color/linetype argument.
+} 
+plot(x, y, 'g:');
+plot(x, y, 'g^');
+help plot
+ <strong>plot</strong>   Linear plot. 
+    <strong>plot</strong>(X,Y) plots vector Y versus vector X. If X or Y is a matrix,
+    then the vector is plotted versus the rows or columns of the matrix,
+    whichever line up.  If X is a scalar and Y is a vector, disconnected
+    line objects are created and plotted as discrete points vertically at
+    X.
+ 
+    <strong>plot</strong>(Y) plots the columns of Y versus their index.
+    If Y is complex, <strong>plot</strong>(Y) is equivalent to <strong>plot</strong>(real(Y),imag(Y)).
+    In all other uses of <strong>plot</strong>, the imaginary part is ignored.
+ 
+    Various line types, plot symbols and colors may be obtained with
+    <strong>plot</strong>(X,Y,S) where S is a character string made from one element
+    from any or all the following 3 columns:
+ 
+           b     blue          .     point              -     solid
+           g     green         o     circle             :     dotted
+           r     red           x     x-mark             -.    dashdot 
+           c     cyan          +     plus               --    dashed   
+           m     magenta       *     star             (none)  no line
+           y     yellow        s     square
+           k     black         d     diamond
+           w     white         v     triangle (down)
+                               ^     triangle (up)
+                               <     triangle (left)
+                               >     triangle (right)
+                               p     pentagram
+                               h     hexagram
+                          
+    For example, <strong>plot</strong>(X,Y,'c+:') plots a cyan dotted line with a plus 
+    at each data point; <strong>plot</strong>(X,Y,'bd') plots blue diamond at each data 
+    point but does not draw any line.
+ 
+    <strong>plot</strong>(X1,Y1,S1,X2,Y2,S2,X3,Y3,S3,...) combines the plots defined by
+    the (X,Y,S) triples, where the X's and Y's are vectors or matrices 
+    and the S's are strings.  
+ 
+    For example, <strong>plot</strong>(X,Y,'y-',X,Y,'go') plots the data twice, with a
+    solid yellow line interpolating green circles at the data points.
+ 
+    The <strong>plot</strong> command, if no color is specified, makes automatic use of
+    the colors specified by the axes ColorOrder property.  By default,
+    <strong>plot</strong> cycles through the colors in the ColorOrder property.  For
+    monochrome systems, <strong>plot</strong> cycles over the axes LineStyleOrder property.
+ 
+    Note that RGB colors in the ColorOrder property may differ from
+    similarly-named colors in the (X,Y,S) triples.  For example, the 
+    second axes ColorOrder property is medium green with RGB [0 .5 0],
+    while <strong>plot</strong>(X,Y,'g') plots a green line with RGB [0 1 0].
+ 
+    If you do not specify a marker type, <strong>plot</strong> uses no marker. 
+    If you do not specify a line style, <strong>plot</strong> uses a solid line.
+ 
+    <strong>plot</strong>(AX,...) plots into the axes with handle AX.
+ 
+    <strong>plot</strong> returns a column vector of handles to lineseries objects, one
+    handle per plotted line. 
+ 
+    The X,Y pairs, or X,Y,S triples, can be followed by 
+    parameter/value pairs to specify additional properties 
+    of the lines. For example, <strong>plot</strong>(X,Y,'LineWidth',2,'Color',[.6 0 0]) 
+    will create a plot with a dark red line width of 2 points.
+ 
+    Example
+       x = -pi:pi/10:pi;
+       y = tan(sin(x)) - sin(tan(x));
+       plot(x,y,'--rs','LineWidth',2,...
+                       'MarkerEdgeColor','k',...
+                       'MarkerFaceColor','g',...
+                       'MarkerSize',10)
+ 
+    See also <a href="matlab:help plottools">plottools</a>, <a href="matlab:help semilogx">semilogx</a>, <a href="matlab:help semilogy">semilogy</a>, <a href="matlab:help loglog">loglog</a>, <a href="matlab:help plotyy">plotyy</a>, <a href="matlab:help plot3">plot3</a>, <a href="matlab:help grid">grid</a>,
+    <a href="matlab:help title">title</a>, <a href="matlab:help xlabel">xlabel</a>, <a href="matlab:help ylabel">ylabel</a>, <a href="matlab:help axis">axis</a>, <a href="matlab:help axes">axes</a>, <a href="matlab:help hold">hold</a>, <a href="matlab:help legend">legend</a>, <a href="matlab:help subplot">subplot</a>, <a href="matlab:help scatter">scatter</a>.
+
+    <a href="matlab:matlab.internal.language.introspective.displayOverloads('plot')">Other functions named plot</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc plot">doc plot</a>
+
+title("X")
+ title("X")
+       |
+{Error: The input character is not valid in MATLAB statements or expressions.
+} 
+title('This is the title')
+plot(x, y, 'g^');
+figure
+title('This is the title')
+plot(x, y, 'g^');
+title('This is the title')
+plot(x, y, 'g^');
+title('This is the title')
+labelx('The X Axis')
+{Undefined function or variable 'labelx'.
+} 
+xlabel('The X Axis')
+ylabel('The Y Axis')
+grid on
+grid off
+help area
+ <strong>area</strong>  Filled area plot.
+    <strong>area</strong>(X,Y) produces a stacked area plot suitable for showing the
+    contributions of various components to a whole.
+ 
+    For vector X and Y, <strong>area</strong>(X,Y) is the same as PLOT(X,Y) except that
+    the area between 0 and Y is filled.  When Y is a matrix, <strong>area</strong>(X,Y)
+    plots the columns of Y as filled areas.  For each X, the net
+    result is the sum of corresponding values from the columns of Y.
+ 
+    <strong>area</strong>(Y) uses the default value of X=1:SIZE(Y,1).
+ 
+    <strong>area</strong>(X,Y,LEVEL) or <strong>area</strong>(Y,LEVEL) specifies the base level
+    for the area plot to be at the value y=LEVEL.  The default
+    value is LEVEL=0.
+ 
+    <strong>area</strong>(...,'Prop1',VALUE1,'Prop2',VALUE2,...) sets the specified
+    properties of the underlying areaseries objects.
+ 
+    <strong>area</strong>(AX,...) plots into axes with handle AX. Use GCA to get the
+    handle to the current axes or to create one if none exist.
+ 
+    H = <strong>area</strong>(...) returns a vector of handles to areaseries objects.
+ 
+    See also <a href="matlab:help plot">plot</a>, <a href="matlab:help bar">bar</a>.
+
+    <a href="matlab:matlab.internal.language.introspective.displayOverloads('area')">Other functions named area</a>
+
+    Reference page in Help browser
+       <a href="matlab:doc area">doc area</a>
+
+area(x, y)
+
+
+diary off

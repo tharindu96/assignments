@@ -1,0 +1,8 @@
+data = xlsread('data.xlsx');
+x = data(:,1);
+y = daya(:,2);
+{Undefined variable daya.
+} 
+y = data(:,2);
+plot(x, y);
+diary off

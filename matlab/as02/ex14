@@ -1,0 +1,32 @@
+x = [0:0.01:4];
+ya = x;
+yb = x.^3;
+yc = exp(x);
+yd = exp(x.^2);
+subplot(2, 2, 1);
+plot(x, y);
+{Undefined function or variable 'y'.
+} 
+plot(x, ya);
+subplot(2, 2, 2);
+semilogx(
+ semilogx(
+          |
+{Error: Expression or statement is incorrect--possibly unbalanced (, {, or [.
+} 
+clf
+subplot(2, 2, 1);
+plot(x, y);
+{Undefined function or variable 'y'.
+} 
+plot(x, ya);
+subplot(2, 2, 2);
+semilogx(x, yb);
+subplot(2, 2, 3);
+semilogy(x, yc);
+loglog(x, yd);
+subplot(2, 2, 3);
+semilogy(x, yc);
+subplot(2, 2, 4);
+loglog(x, yd);
+diary off

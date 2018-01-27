@@ -1,0 +1,7 @@
+x = [-5:0.01:5];
+y = sin(x.^2);
+plot(x, y);
+title('sin(x^2)');
+xlabel('x');
+ylabel('sin(x^2)');
+diary off

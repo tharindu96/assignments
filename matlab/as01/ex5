@@ -1,0 +1,139 @@
+clear
+clc
+A = magic(4)
+
+A =
+
+    16     2     3    13
+     5    11    10     8
+     9     7     6    12
+     4    14    15     1
+
+sum(A)
+
+ans =
+
+    34    34    34    34
+
+sum(A, 2)
+
+ans =
+
+    34
+    34
+    34
+    34
+
+sum(diag(A))
+
+ans =
+
+    34
+
+A=[2 1; 1 1]
+
+A =
+
+     2     1
+     1     1
+
+B=[8; 6]
+
+B =
+
+     8
+     6
+
+x = A\B
+
+x =
+
+    2.0000
+    4.0000
+
+x = B\A
+
+x =
+
+    0.2200    0.1400
+
+x = A\B
+
+x =
+
+    2.0000
+    4.0000
+
+A = [-6 -2 2; -3 4 -3; 2 4 -7]
+
+A =
+
+    -6    -2     2
+    -3     4    -3
+     2     4    -7
+
+B = [15 13 -9]
+
+B =
+
+    15    13    -9
+
+x = A\B
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mldivide')" style="font-weight:bold"> \ </a>
+Matrix dimensions must agree.
+} 
+B = [15; 13; -9]
+
+B =
+
+    15
+    13
+    -9
+
+x = A\B
+
+x =
+
+   -2.7273
+    2.7727
+    2.0909
+
+x = B\A
+
+x =
+
+   -0.3095   -0.0295    0.1137
+
+x = A\B
+
+x =
+
+   -2.7273
+    2.7727
+    2.0909
+
+x
+
+x =
+
+   -2.7273
+    2.7727
+    2.0909
+
+A
+
+A =
+
+    -6    -2     2
+    -3     4    -3
+     2     4    -7
+
+A*x
+
+ans =
+
+    15
+    13
+    -9
+
+diary off

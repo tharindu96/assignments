@@ -1,0 +1,26 @@
+x = [-10:0.01:10];
+ya = x.*exp(-x*2);
+yb = cos(10*x).*exp(-x*2);
+yc = (x.^4 + 2*x.^2+1)/(x.^4+x.^2-1);
+yc = (x.^4 + 2*x.^2+1)./(x.^4+x.^2-1);
+yd = log(x.^2 + 1 / x);
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('mrdivide')" style="font-weight:bold"> / </a>
+Matrix dimensions must agree.
+} 
+yd = log(x.^2 + 1 ./ x);
+ye = exp(1 ./ x.^3 + 1);
+yf = cos(x)./x;
+subplot(2, 3, 1);
+plot(x, ya);
+subplot(2, 3, 2);
+plot(x, yb);
+subplot(2, 3, 3);
+plot(x, yc);
+subplot(2, 3, 4);
+plot(x, yd);
+[Warning: Imaginary parts of complex X and/or Y arguments ignored] 
+subplot(2, 3, 5);
+plot(x, ye);
+subplot(2, 3, 6);
+plot(x, yf);
+diary off
