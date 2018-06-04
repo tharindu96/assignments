@@ -1,0 +1,6 @@
+Name: Tharindu Hasthika
+Age: 22
+School: Richmond College Galle
+Gender: Male
+University: University of Ruhuna
+Degree: Bachelor of Computer Science
