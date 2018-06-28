@@ -1,0 +1,8 @@
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P14\S02P14\bin\Debug\S02P14.exe.config
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P14\S02P14\bin\Debug\S02P14.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P14\S02P14\bin\Debug\S02P14.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P14\S02P14\obj\Debug\S02P14.Form1.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P14\S02P14\obj\Debug\S02P14.Properties.Resources.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P14\S02P14\obj\Debug\S02P14.csproj.GenerateResource.Cache
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P14\S02P14\obj\Debug\S02P14.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P14\S02P14\obj\Debug\S02P14.pdb

@@ -1,0 +1,9 @@
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P01\S02P01\bin\Debug\S02P01.exe.config
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P01\S02P01\bin\Debug\S02P01.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P01\S02P01\bin\Debug\S02P01.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P01\S02P01\obj\Debug\S02P01.csprojResolveAssemblyReference.cache
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P01\S02P01\obj\Debug\S02P01.Form1.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P01\S02P01\obj\Debug\S02P01.Properties.Resources.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P01\S02P01\obj\Debug\S02P01.csproj.GenerateResource.Cache
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P01\S02P01\obj\Debug\S02P01.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W2\S02P01\S02P01\obj\Debug\S02P01.pdb

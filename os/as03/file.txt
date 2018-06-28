@@ -1,0 +1,10 @@
+There is a file called: batch01.bat
+There is a file called: batch02.bat
+There is a file called: batch03.bat
+There is a file called: batch04.bat
+There is a file called: batch05.bat
+There is a file called: batch06.bat
+There is a file called: batch07.bat
+There is a file called: batch08.bat
+There is a file called: batch09.bat
+There is a file called: file.txt

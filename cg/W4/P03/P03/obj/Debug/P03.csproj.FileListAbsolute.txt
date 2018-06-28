@@ -1,0 +1,9 @@
+C:\Users\bcs2\Desktop\sc9935\CG\W4\P03\P03\bin\Debug\P03.exe.config
+C:\Users\bcs2\Desktop\sc9935\CG\W4\P03\P03\bin\Debug\P03.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W4\P03\P03\bin\Debug\P03.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W4\P03\P03\obj\Debug\P03.Form1.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W4\P03\P03\obj\Debug\P03.Properties.Resources.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W4\P03\P03\obj\Debug\P03.csproj.GenerateResource.Cache
+C:\Users\bcs2\Desktop\sc9935\CG\W4\P03\P03\obj\Debug\P03.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W4\P03\P03\obj\Debug\P03.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W4\P03\P03\obj\Debug\P03.csprojResolveAssemblyReference.cache

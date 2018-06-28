@@ -1,0 +1,9 @@
+C:\Users\bcs2\Desktop\sc9935\CG\W2\myFirst\myFirst\bin\Debug\myFirst.exe.config
+C:\Users\bcs2\Desktop\sc9935\CG\W2\myFirst\myFirst\bin\Debug\myFirst.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W2\myFirst\myFirst\bin\Debug\myFirst.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W2\myFirst\myFirst\obj\Debug\myFirst.csprojResolveAssemblyReference.cache
+C:\Users\bcs2\Desktop\sc9935\CG\W2\myFirst\myFirst\obj\Debug\myFirst.Form1.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W2\myFirst\myFirst\obj\Debug\myFirst.Properties.Resources.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W2\myFirst\myFirst\obj\Debug\myFirst.csproj.GenerateResource.Cache
+C:\Users\bcs2\Desktop\sc9935\CG\W2\myFirst\myFirst\obj\Debug\myFirst.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W2\myFirst\myFirst\obj\Debug\myFirst.pdb
