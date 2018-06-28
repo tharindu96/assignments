@@ -7,3 +7,8 @@ then
 fi
 
 sudo umount $1
+
+if [ -d "$1" ]
+then
+	rm -vrf "$1"
+fi
