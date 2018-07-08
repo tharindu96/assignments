@@ -7,3 +7,6 @@ C:\Users\TEMP.DCS17.002\Desktop\sc9935\CG\W5\P01\P01\obj\Debug\P01.Properties.Re
 C:\Users\TEMP.DCS17.002\Desktop\sc9935\CG\W5\P01\P01\obj\Debug\P01.csproj.GenerateResource.Cache
 C:\Users\TEMP.DCS17.002\Desktop\sc9935\CG\W5\P01\P01\obj\Debug\P01.exe
 C:\Users\TEMP.DCS17.002\Desktop\sc9935\CG\W5\P01\P01\obj\Debug\P01.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W5\P01\P01\bin\Debug\P01.exe.config
+C:\Users\bcs2\Desktop\sc9935\CG\W5\P01\P01\obj\Debug\P01.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W5\P01\P01\obj\Debug\P01.pdb
