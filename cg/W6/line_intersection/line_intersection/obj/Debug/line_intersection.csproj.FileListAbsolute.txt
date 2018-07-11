@@ -1,0 +1,9 @@
+C:\Users\bcs2\Desktop\sc9935\CG\W6\line_intersection\line_intersection\bin\Debug\line_intersection.exe.config
+C:\Users\bcs2\Desktop\sc9935\CG\W6\line_intersection\line_intersection\bin\Debug\line_intersection.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W6\line_intersection\line_intersection\bin\Debug\line_intersection.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W6\line_intersection\line_intersection\obj\Debug\line_intersection.Form1.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W6\line_intersection\line_intersection\obj\Debug\line_intersection.Properties.Resources.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W6\line_intersection\line_intersection\obj\Debug\line_intersection.csproj.GenerateResource.Cache
+C:\Users\bcs2\Desktop\sc9935\CG\W6\line_intersection\line_intersection\obj\Debug\line_intersection.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W6\line_intersection\line_intersection\obj\Debug\line_intersection.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W6\line_intersection\line_intersection\obj\Debug\line_intersection.csprojResolveAssemblyReference.cache
