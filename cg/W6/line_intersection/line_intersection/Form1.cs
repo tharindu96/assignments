@@ -82,12 +82,12 @@ namespace line_intersection
             t3 = getT(x3, y3, x4, y4, x1, y1);
             t4 = getT(x3, y3, x4, y4, x2, y2);
 
-            if (t1 * t2 > 0 && t3 * t4 > 0)
+            if (t1 * t2 <= 0 && t3 * t4 <= 0)
             {
                 lblStatus.Text = "Intersects!";
                 return;
             }
-
+             
             if (t1 == 0 && onSegment(x1, y1, x2, y2, x3, y3))
             {
                 lblStatus.Text = "Intersects!";
