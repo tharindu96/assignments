@@ -46,13 +46,19 @@ int main(int argc, char const *argv[])
                 if (ids[t] == 0) {
                     *shared_mem = pid;
                 }
-                printf("pid: %d  |  shared memory: %d\n", pid, (int)(*shared_mem));
+                // printf("pid: %d  |  shared memory: %d\n", pid, (int)(*shared_mem));
                 mutex = 0;
                 sleep(WAIT_TIME);
             }
 
             exit(0);
         }
+    }
+
+    for (int i = 0; i < P_COUNT; i++) {
+        printf("report: %d\n", *shared_mem);
+
+        sleep(WAIT_TIME);
     }
 
     for (int i = 0; i < P_COUNT; i++) {
