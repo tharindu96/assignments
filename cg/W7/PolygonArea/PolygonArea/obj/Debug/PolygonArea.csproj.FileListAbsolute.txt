@@ -1,0 +1,9 @@
+C:\Users\bcs2\Desktop\sc9935\CG\W7\PolygonArea\PolygonArea\bin\Debug\PolygonArea.exe.config
+C:\Users\bcs2\Desktop\sc9935\CG\W7\PolygonArea\PolygonArea\bin\Debug\PolygonArea.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W7\PolygonArea\PolygonArea\bin\Debug\PolygonArea.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W7\PolygonArea\PolygonArea\obj\Debug\PolygonArea.csprojResolveAssemblyReference.cache
+C:\Users\bcs2\Desktop\sc9935\CG\W7\PolygonArea\PolygonArea\obj\Debug\PolygonArea.Properties.Resources.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W7\PolygonArea\PolygonArea\obj\Debug\PolygonArea.csproj.GenerateResource.Cache
+C:\Users\bcs2\Desktop\sc9935\CG\W7\PolygonArea\PolygonArea\obj\Debug\PolygonArea.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W7\PolygonArea\PolygonArea\obj\Debug\PolygonArea.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W7\PolygonArea\PolygonArea\obj\Debug\ReflexVectors.Form1.resources

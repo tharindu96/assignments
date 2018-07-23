@@ -75,57 +75,56 @@ namespace ReflexVectors
 
             List<Vertex> reflexVertices = new List<Vertex>();
 
-            Vertex v1, v2, a, b;
-            int prevS = 1;
+            Vertex v, a, b;
+            int S = 0;
             int s = 0;
 
-            for (int i = 0; i < mVertices.Count; i++)
+            int i = getLowestCoords();
+            int start = i;
+            int j;
+            bool started = false;
+
+            for (; (i - start) < mVertices.Count; i++)
             {
-                v1 = mVertices[i % mVertices.Count];
-                v2 = mVertices[(i + 1) % mVertices.Count];
-                a = mVertices[(i + 2) % mVertices.Count];
-                s = getT(v1, v2, a);
-                for (int j = 0; j < mVertices.Count - 3; j++)
+                Console.WriteLine(i - start);
+                v = mVertices[i % mVertices.Count];
+                a = mVertices[(i + 1) % mVertices.Count];
+                j = i - 1;
+                if (j < 0)
                 {
-                    a = mVertices[(j + i + 3) % mVertices.Count];
-                    prevS = s;
-                    s = getT(v1, v2, a);
-                    Console.WriteLine("prevS: " + prevS + " s: " + s);
-                    if (prevS != s)
+                    j = mVertexCount - 1;
+                }
+                else
+                {
+                    j = (i - 1) % mVertices.Count;
+                }
+                b = mVertices[j];
+                s = getT(b, v, a);
+                if (!started)
+                {
+                    S = s;
+                    started = true;
+                }
+                else
+                {
+                    if (s != S)
                     {
-                        reflexVertices.Add(v2);
-                        break;
+                        reflexVertices.Add(v);
                     }
                 }
-                //b = mVertices[(i + 2) % mVertices.Count];
-                //int t = i - 1;
-                //if (t < 0)
-                //{
-                //    t = mVertices.Count + t;
-                //}
-                //a = mVertices[Math.Abs(t) % mVertices.Count];
-                //s = getT(v1, v2, a) * getT(v1, v2, b);
-                //if (prevS == -1 && s == -1)
-                //{
-                //    reflexVertices.Add(v1);
-                //}
-                //else
-                //{
-                //    prevS = s;
-                //}
-
             }
 
-            for (int i = 0; i < reflexVertices.Count; i++)
+            for (i = 0; i < reflexVertices.Count; i++)
             {
-                v1 = reflexVertices[i];
-                drawCircle(v1, 10.0f, Pens.Red);
+                v = reflexVertices[i];
+                drawCircle(v, 10.0f, Pens.Red);
             }
 
         }
 
         private void pnlMain_MouseUp(object sender, MouseEventArgs e)
         {
+            if (!mDrawing) return;
             Vertex v = new Vertex
             {
                 x = e.X,
@@ -199,6 +198,23 @@ namespace ReflexVectors
             if (s > 0) return 1;
             if (s < 0) return -1;
             return 0;
+        }
+
+        private int getLowestCoords()
+        {
+            if (mVertexCount <= 0)
+                return -1;
+            int l = 0;
+            float minY = mVertices[0].y;
+            for (int i = 1; i < mVertexCount; i++)
+            {
+                if (minY > mVertices[i].y)
+                {
+                    minY = mVertices[i].y;
+                    l = i;
+                }
+            }
+            return l;
         }
     }
 

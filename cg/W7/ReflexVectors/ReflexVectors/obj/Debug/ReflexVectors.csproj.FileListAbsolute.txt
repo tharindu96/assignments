@@ -17,3 +17,6 @@ C:\Users\thari\Documents\CG\W7\ReflexVectors\ReflexVectors\obj\Debug\ReflexVecto
 C:\Users\thari\Documents\CG\W7\ReflexVectors\ReflexVectors\obj\Debug\ReflexVectors.csproj.CoreCompileInputs.cache
 C:\Users\thari\Documents\CG\W7\ReflexVectors\ReflexVectors\obj\Debug\ReflexVectors.exe
 C:\Users\thari\Documents\CG\W7\ReflexVectors\ReflexVectors\obj\Debug\ReflexVectors.pdb
+F:\CG\W7\ReflexVectors\ReflexVectors\bin\Debug\ReflexVectors.exe.config
+F:\CG\W7\ReflexVectors\ReflexVectors\obj\Debug\ReflexVectors.exe
+F:\CG\W7\ReflexVectors\ReflexVectors\obj\Debug\ReflexVectors.pdb

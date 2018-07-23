@@ -1,0 +1,8 @@
+C:\Users\bcs2\Desktop\sc9935\CG\W8\RandomSimplePolygon\RandomSimplePolygon\bin\Debug\RandomSimplePolygon.exe.config
+C:\Users\bcs2\Desktop\sc9935\CG\W8\RandomSimplePolygon\RandomSimplePolygon\bin\Debug\RandomSimplePolygon.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W8\RandomSimplePolygon\RandomSimplePolygon\bin\Debug\RandomSimplePolygon.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W8\RandomSimplePolygon\RandomSimplePolygon\obj\Debug\RandomSimplePolygon.Form1.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W8\RandomSimplePolygon\RandomSimplePolygon\obj\Debug\RandomSimplePolygon.Properties.Resources.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W8\RandomSimplePolygon\RandomSimplePolygon\obj\Debug\RandomSimplePolygon.csproj.GenerateResource.Cache
+C:\Users\bcs2\Desktop\sc9935\CG\W8\RandomSimplePolygon\RandomSimplePolygon\obj\Debug\RandomSimplePolygon.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W8\RandomSimplePolygon\RandomSimplePolygon\obj\Debug\RandomSimplePolygon.pdb
