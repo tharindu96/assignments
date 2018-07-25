@@ -6,7 +6,8 @@ class ReadData {
     		RandomAccessFile raf = new RandomAccessFile("MyFile.txt", "r");
     		byte[] arr = new byte[1000];
     		raf.readFully(arr, 0, 10);
-    		System.out.println(new String(arr));
+			System.out.println(new String(arr));
+			raf.close();
     	} catch (FileNotFoundException e) {
 			System.out.println("File not found");
 			e.printStackTrace();
