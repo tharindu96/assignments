@@ -25,22 +25,29 @@ public class P03 {
         
         try {
             System.out.println("Multi-Threaded:");
-            time = System.nanoTime();
+            
             ArraySumThread tA, tB, tC;
+            
             tA = new ArraySumThread("class_A");
             tB = new ArraySumThread("class_B");
             tC = new ArraySumThread("class_C");
+            
             tA.setArray(class_A);
             tB.setArray(class_B);
             tC.setArray(class_C);
+            
+            time = System.nanoTime();
             tA.start();
             tB.start();
             tC.start();
+            
             tA.join();
             tB.join();
             tC.join();
+            
             time = System.nanoTime() - time;
             System.out.println(time);
+        
         } catch (InterruptedException ex) {
             Logger.getLogger(P03.class.getName()).log(Level.SEVERE, null, ex);
         }
