@@ -107,6 +107,28 @@ namespace RandomSimplePolygon
             return 0;
         }
 
+        private bool isSimple()
+        {
+            Vertex v0, v1, v2, v3;
+            for (int i = 0; i < mVertexCount; i++)
+            {
+                v0 = mVertices[i];
+                v1 = mVertices[(i + 1) % mVertexCount];
+
+                for (int j = 0; j < mVertexCount - 2; j++)
+                {
+                    v2 = mVertices[(i + 2 + j) % mVertexCount];
+                    v3 = mVertices[(i + 3 + j) % mVertexCount];
+
+                    if (getT(v0, v1, v2) * getT(v0, v1, v3) < 0 && getT(v2, v3, v0) * getT(v2, v3, v1) < 0)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
         private void generateRandomVertices()
         {
             Random rand = new Random();
@@ -114,7 +136,7 @@ namespace RandomSimplePolygon
             Vertex v0, v1, v2, v3;
 
             bool found = false;
-            bool innerFind = false;
+            bool simple = false;
 
             while (!found)
             {
@@ -128,30 +150,11 @@ namespace RandomSimplePolygon
                     mVertices.Add(v);
                 }
 
-                innerFind = true;
+                simple = isSimple();
 
-                for (int i = 0; i < mVertexCount; i++)
-                {
-                    v0 = mVertices[i];
-                    v1 = mVertices[(i + 1) % mVertexCount];
+                Console.WriteLine(simple);
 
-                    for (int j = 0; j < mVertexCount - 2; j++)
-                    {
-                        v2 = mVertices[(i + 2 + j) % mVertexCount];
-                        v3 = mVertices[(i + 3 + j) % mVertexCount];
-
-                        if (getT(v0, v1, v2) * getT(v0, v1, v3) == 1 && getT(v2, v3, v0) * getT(v2, v3, v1) == 1)
-                        {
-                            innerFind = false;
-                            break;
-                        }
-
-                    }
-                }
-
-                Console.WriteLine(innerFind);
-
-                if (innerFind)
+                if (simple)
                 {
                     found = true;
                     break;
