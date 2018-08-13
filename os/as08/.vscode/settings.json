@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "wait.h": "c",
-        "swap.h": "c"
+        "swap.h": "c",
+        "stdlib.h": "c",
+        "unistd.h": "c"
     }
 }
