@@ -29,6 +29,7 @@ class Ex06 {
         // LEFT PANEL
 
         JPanel lpanel = new JPanel();
+        lpanel.setMaximumSize(new Dimension(200, 400));
 
         panel.add(lpanel, BorderLayout.WEST);
 
@@ -37,8 +38,16 @@ class Ex06 {
         lpanel.add(lblLang);
 
         JRadioButton rbtnJava = new JRadioButton("Java");
+        JRadioButton rbtnC = new JRadioButton("C");
+        JRadioButton rbtnCPP = new JRadioButton("C++");
+        JRadioButton rbtnPython = new JRadioButton("Python");
+        JRadioButton rbtnPHP = new JRadioButton("PHP");
         
         lpanel.add(rbtnJava);
+        lpanel.add(rbtnC);
+        lpanel.add(rbtnCPP);
+        lpanel.add(rbtnPython);
+        lpanel.add(rbtnPHP);
 
         // END LEFT PANEL
 
@@ -59,7 +68,7 @@ class Ex06 {
         JLabel lblWelcome = new JLabel("Welcome");
         lblWelcome.setBackground(Color.yellow);
         lblWelcome.setForeground(Color.blue);
-        lblWelcome.setPreferredSize(new Dimension(400, 400));
+        // lblWelcome.setPreferredSize(new Dimension(400, 400));
 
         panel.add(lblWelcome, BorderLayout.CENTER);
 
