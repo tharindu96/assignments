@@ -15,6 +15,7 @@ namespace RotateScale
     {
 
         private Graphics graphics;
+        private bool mCleared = false;
 
         public Form1()
         {
@@ -70,7 +71,13 @@ namespace RotateScale
             graphics = pnlMain.CreateGraphics();
         }
 
-        private void btnStart_Click(object sender, EventArgs e)
+        private async void btnStart_Click(object sender, EventArgs e)
+        {
+            mCleared = false;
+            await Task.Run(() => runAnimation());
+        }
+
+        private void runAnimation()
         {
             Polygon p1 = new Polygon();
             p1.addVertex(new Vertex(100, 100));
@@ -87,6 +94,11 @@ namespace RotateScale
 
             for (int i = 0; i < 1000; i++)
             {
+                if (mCleared == true)
+                {
+                    break;
+                }
+
                 graphics.Clear(SystemColors.Control);
 
                 p1.rotate(-0.01);
@@ -99,11 +111,17 @@ namespace RotateScale
                 drawPolygon(p2);
                 Thread.Sleep(1000 / 60);
             }
-
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private async void btnClear_Click(object sender, EventArgs e)
         {
+            mCleared = true;
+            await Task.Run(() => clearScreen());
+        }
+
+        private void clearScreen()
+        {
+            Thread.Sleep(100);
             graphics.Clear(SystemColors.Control);
         }
     }
