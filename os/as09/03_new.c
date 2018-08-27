@@ -6,6 +6,8 @@
 #define MATRIX_B 1
 #define MATRIX_R 2
 
+#define MAX_THREADS 20000
+
 typedef unsigned int uint;
 
 typedef struct {
@@ -14,14 +16,34 @@ typedef struct {
     int *data;
 } Matrix;
 
-typedef struct {
+typedef struct _ThreadJob {
     uint i;
     uint j;
+    struct _ThreadJob *next;
 } ThreadJob;
+
+typedef struct {
+    uint count;
+    pthread_mutex_t mtx;
+    ThreadJob *head;
+    ThreadJob *tail;
+} JobQueue;
+
+static inline uint min(uint m, uint n) {
+    if (m > n) return n; else return m;
+}
 
 static inline uint matrix_get_pos(uint i, uint j, Matrix *matrix) {
     return i * matrix->n + j;
 }
+
+JobQueue* jobqueue_init();
+void jobqueue_free(JobQueue *queue);
+void jobqueue_enqueue(JobQueue *queue, ThreadJob *job);
+void jobqueue_dequeue(JobQueue *queue, ThreadJob **job);
+
+ThreadJob* threadjob_init(uint i, uint j);
+void threadjob_free(ThreadJob *job);
 
 void matrix_init(Matrix *matrix, uint m, uint n);
 void matrix_free(Matrix *matrix);
@@ -69,17 +91,24 @@ int main(int argc, char const *argv[])
 
     matrix_init(R, A->n, B->m);
 
-    uint thread_count = R->m * R->n;
+    uint job_count = R->m * R->n;
+    uint thread_count = min(job_count, MAX_THREADS);
+
+    JobQueue *queue = jobqueue_init();
+
     pthread_t *threads = (pthread_t*) malloc(sizeof(pthread_t) * thread_count);
-    ThreadJob *thread_job = (ThreadJob*) malloc(sizeof(ThreadJob) * thread_count);
+    ThreadJob *job;
     int ret;
 
+    // ThreadJob *thread_job = (ThreadJob*) malloc(sizeof(ThreadJob) * thread_count);
+
+    for (uint i = 0; i < job_count; i++) {
+        job = threadjob_init(i / R->n, i % R->n);
+        jobqueue_enqueue(queue, job);
+    }
+
     for (uint i = 0; i < thread_count; i++) {
-        thread_job[i].i = i / R->n;
-        thread_job[i].j = i % R->n;
-
-        ret = pthread_create(&threads[i], NULL, slave, (void*)&thread_job[i]);
-
+        ret = pthread_create(&threads[i], NULL, slave, (void*)queue);
         if (ret) {
             printf("Error: pthread_create\n");
             exit(-1);
@@ -99,10 +128,10 @@ int main(int argc, char const *argv[])
     printf("R = A * B Matrix:\n");
     matrix_print(R);
 
-    // clear memory
+    // // clear memory
 
+    jobqueue_free(queue);
     free(threads);
-    free(thread_job);
     matrix_free(A);
     matrix_free(B);
     matrix_free(R);
@@ -172,8 +201,82 @@ uint matrix_cell_multiply(uint i, uint j) {
 }
 
 void *slave(void *data) {
-    ThreadJob *tjob = (ThreadJob*) data;
-    Matrix *R = &matrices[MATRIX_R];
-    R->data[matrix_get_pos(tjob->i, tjob->j, R)] = matrix_cell_multiply(tjob->i, tjob->j);
+    JobQueue *queue = (JobQueue*) data;
+
+    ThreadJob *tjob = NULL;
+    jobqueue_dequeue(queue, &tjob);
+
+    while (tjob != NULL) {
+        Matrix *R = &matrices[MATRIX_R];
+        R->data[matrix_get_pos(tjob->i, tjob->j, R)] = matrix_cell_multiply(tjob->i, tjob->j);
+        threadjob_free(tjob);
+        jobqueue_dequeue(queue, &tjob);
+    }
+
     pthread_exit(0);
+}
+
+JobQueue* jobqueue_init() {
+    JobQueue *q = malloc(sizeof(JobQueue));
+    q->head = NULL;
+    q->tail = NULL;
+    pthread_mutex_init(&q->mtx, NULL);
+    q->count = 0;
+    return q;
+}
+
+void jobqueue_free(JobQueue *queue) {
+    ThreadJob *job;
+    if (queue->count > 0) {
+        while (queue->head != NULL) {
+            job = queue->head;
+            queue->head = queue->head->next;
+            threadjob_free(job);
+        }
+    }
+    pthread_mutex_destroy(&queue->mtx);
+    free(queue);
+}
+
+void jobqueue_enqueue(JobQueue *queue, ThreadJob *job) {
+    pthread_mutex_lock(&queue->mtx);
+
+    if (queue->count == 0) {
+        queue->head = job;
+        queue->tail = job;
+    } else {
+        queue->tail->next = job;
+        queue->tail = queue->tail->next;
+    }
+
+    queue->count++;
+
+    pthread_mutex_unlock(&queue->mtx);
+}
+
+void jobqueue_dequeue(JobQueue *queue, ThreadJob **job) {
+    pthread_mutex_lock(&queue->mtx);
+
+    if(queue->count > 0) {
+        *job = queue->head;
+        queue->head = (*job)->next;
+        queue->count--;
+    } else {
+        *job = NULL;
+    }
+
+    pthread_mutex_unlock(&queue->mtx);
+}
+
+ThreadJob* threadjob_init(uint i, uint j) {
+    ThreadJob *job = malloc(sizeof(ThreadJob));
+    job->i = i;
+    job->j = j;
+    job->next = NULL;
+    return job;
+}
+
+void threadjob_free(ThreadJob *job) {
+    job->next = NULL;
+    free(job);
 }
