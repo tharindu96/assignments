@@ -1,0 +1,9 @@
+C:\Users\bcs2\Desktop\sc9935\CG\W11\RotateScale\RotateScale\bin\Debug\RotateScale.exe.config
+C:\Users\bcs2\Desktop\sc9935\CG\W11\RotateScale\RotateScale\bin\Debug\RotateScale.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W11\RotateScale\RotateScale\bin\Debug\RotateScale.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W11\RotateScale\RotateScale\obj\Debug\RotateScale.csprojResolveAssemblyReference.cache
+C:\Users\bcs2\Desktop\sc9935\CG\W11\RotateScale\RotateScale\obj\Debug\RotateScale.Form1.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W11\RotateScale\RotateScale\obj\Debug\RotateScale.Properties.Resources.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W11\RotateScale\RotateScale\obj\Debug\RotateScale.csproj.GenerateResource.Cache
+C:\Users\bcs2\Desktop\sc9935\CG\W11\RotateScale\RotateScale\obj\Debug\RotateScale.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W11\RotateScale\RotateScale\obj\Debug\RotateScale.pdb
