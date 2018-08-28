@@ -1,7 +1,4 @@
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-
+import java.awt.*;
 import javax.swing.*;
 
 class Ex06 {
@@ -29,9 +26,8 @@ class Ex06 {
         // LEFT PANEL
 
         JPanel lpanel = new JPanel();
-        lpanel.setMaximumSize(new Dimension(200, 400));
-
-        panel.add(lpanel, BorderLayout.WEST);
+        BoxLayout boxl = new BoxLayout(lpanel, BoxLayout.Y_AXIS);
+        lpanel.setLayout(boxl);
 
         JLabel lblLang = new JLabel("Select Language");
 
@@ -48,6 +44,8 @@ class Ex06 {
         lpanel.add(rbtnCPP);
         lpanel.add(rbtnPython);
         lpanel.add(rbtnPHP);
+
+        panel.add(lpanel, BorderLayout.WEST);
 
         // END LEFT PANEL
 
@@ -68,7 +66,7 @@ class Ex06 {
         JLabel lblWelcome = new JLabel("Welcome");
         lblWelcome.setBackground(Color.yellow);
         lblWelcome.setForeground(Color.blue);
-        // lblWelcome.setPreferredSize(new Dimension(400, 400));
+        lblWelcome.setPreferredSize(new Dimension(400, 400));
 
         panel.add(lblWelcome, BorderLayout.CENTER);
 
