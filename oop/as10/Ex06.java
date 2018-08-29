@@ -63,12 +63,14 @@ class Ex06 {
 
         // CENTER PANEL
 
-        JLabel lblWelcome = new JLabel("Welcome");
+        JLabel lblWelcome = new JLabel("Welcome", SwingConstants.CENTER);
         lblWelcome.setBackground(Color.yellow);
         lblWelcome.setForeground(Color.blue);
         lblWelcome.setPreferredSize(new Dimension(400, 400));
 
         panel.add(lblWelcome, BorderLayout.CENTER);
+
+        // END CENTER PANEL
 
     }
 }
