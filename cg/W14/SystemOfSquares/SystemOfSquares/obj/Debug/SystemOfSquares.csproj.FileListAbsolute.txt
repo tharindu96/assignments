@@ -1,0 +1,8 @@
+C:\Users\bcs2\Desktop\sc9935\CG\W14\SystemOfSquares\SystemOfSquares\bin\Debug\SystemOfSquares.exe.config
+C:\Users\bcs2\Desktop\sc9935\CG\W14\SystemOfSquares\SystemOfSquares\obj\Debug\SystemOfSquares.Form1.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W14\SystemOfSquares\SystemOfSquares\obj\Debug\SystemOfSquares.Properties.Resources.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W14\SystemOfSquares\SystemOfSquares\obj\Debug\SystemOfSquares.csproj.GenerateResource.Cache
+C:\Users\bcs2\Desktop\sc9935\CG\W14\SystemOfSquares\SystemOfSquares\bin\Debug\SystemOfSquares.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W14\SystemOfSquares\SystemOfSquares\bin\Debug\SystemOfSquares.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W14\SystemOfSquares\SystemOfSquares\obj\Debug\SystemOfSquares.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W14\SystemOfSquares\SystemOfSquares\obj\Debug\SystemOfSquares.pdb
