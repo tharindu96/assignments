@@ -1,0 +1,9 @@
+C:\Users\bcs2\Desktop\sc9935\CG\W13\RotationRevolution\RotationRevolution\bin\Debug\RotationRevolution.exe.config
+C:\Users\bcs2\Desktop\sc9935\CG\W13\RotationRevolution\RotationRevolution\bin\Debug\RotationRevolution.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W13\RotationRevolution\RotationRevolution\bin\Debug\RotationRevolution.pdb
+C:\Users\bcs2\Desktop\sc9935\CG\W13\RotationRevolution\RotationRevolution\obj\Debug\RotationRevolution.csprojResolveAssemblyReference.cache
+C:\Users\bcs2\Desktop\sc9935\CG\W13\RotationRevolution\RotationRevolution\obj\Debug\RotationRevolution.Form1.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W13\RotationRevolution\RotationRevolution\obj\Debug\RotationRevolution.Properties.Resources.resources
+C:\Users\bcs2\Desktop\sc9935\CG\W13\RotationRevolution\RotationRevolution\obj\Debug\RotationRevolution.csproj.GenerateResource.Cache
+C:\Users\bcs2\Desktop\sc9935\CG\W13\RotationRevolution\RotationRevolution\obj\Debug\RotationRevolution.exe
+C:\Users\bcs2\Desktop\sc9935\CG\W13\RotationRevolution\RotationRevolution\obj\Debug\RotationRevolution.pdb

@@ -186,7 +186,6 @@ namespace AnalogClock
                 pendulum.rotate(angularVelocity * dT * pendConst);
 
                 angularAcceleration = -(gravity / 200.0f) * (float)Math.Sin(theta);
-                // omega = (float)Math.Sqrt(10.0f / (200.0f * Math.Cos(Math.Abs(theta))));
 
                 Console.WriteLine(angularAcceleration + " " + angularVelocity + " " + theta);
 
