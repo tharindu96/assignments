@@ -121,7 +121,7 @@ int main(void)
 
         for (i_child = 0; i_child < run_length; i_child++)
         {
-            P(semid, buf_space);
+            P(semid, buf_used);
             value = buffer[*out];
             *out = (*out + 1) % BUF_SIZE;
             printf("Reader's report: item %2d == %2d\n", i_child, value);
@@ -143,10 +143,10 @@ int main(void)
             printf("Writer's report: item %2d put in buffer\n", j_child);
             if ((j_child % 4) == 0)
                 sleep(1); /* take time to generate every fourth element */
-            V(semid, buf_space);
+            V(semid, buf_used);
         }
-        wait(&pid);
         printf("Writer done.\n");
+        wait(&pid);
 
         /* Remove the semaphore from the system and destroy the set of
           semaphores and data structure associated with it. */

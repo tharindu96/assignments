@@ -69,8 +69,8 @@ int main(int argc, char const *argv[])
             *in = (*in + 1) % BUF_SIZE;
             printf("Writer's report: item %2d put in buffer\n", j_child);
         }
-        wait(&pid);
         printf("Writer done.\n");
+        wait(&pid);
     }
     return 0;
 }

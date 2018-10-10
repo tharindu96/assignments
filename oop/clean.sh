@@ -7,9 +7,8 @@ then
     exit 1
 fi
 
-for f in $1/*.java
+for f in $1/*.class
 do
-    classfile=${f/.java/.class}
-    rm -vf $classfile
+    rm -vf $f
 done
 
