@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>c</title>
+</head>
+<body>
+
+    <h3 id="date-holder"></h3>
+    <h3 id="time-holder"></h3>
+    <h3 id="name-holder"></h3>
+
+    <script type="text/javascript">
+
+    const MONTHS = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+
+    const DAYS = [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday",
+        "Saturday", "Sunday"
+    ];
+    
+    var lastName = prompt("Enter Last Name");
+    var firstName = prompt("Enter First Name");
+
+    var d = new Date()
+    var dstring = MONTHS[d.getMonth()] + " " + d.getFullYear() + " " + DAYS[d.getDay() - 1]
+    var tstring = d.toTimeString()
+    var greeting = "Welcome!, " + firstName + " " + lastName;
+
+    document.getElementById("date-holder").innerText = dstring;
+    document.getElementById("time-holder").innerText = tstring;
+    document.getElementById("name-holder").innerText = greeting;
+
+    </script>
+
+</body>
+</html>
