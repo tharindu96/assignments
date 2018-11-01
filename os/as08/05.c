@@ -75,7 +75,7 @@ void V(int semid, int index)
 
 int main(void)
 {
-    pid_t pid; /* variable to record process id of child */
+    pid_t pid1, pid2, pid3, pid4; /* variable to record process id of child */
 
     /* shared memory elements */
     caddr_t shared_memory; /* shared memory base address */
@@ -109,19 +109,19 @@ int main(void)
     /* create and initialize semaphore */
     semid = sem_init();
 
-    if (-1 == (pid = fork())) /* check for error in spawning child process */
+    if (-1 == (pid1 = fork())) /* check for error in spawning child process */
     {
         perror("error in fork");
         exit(1);
     }
 
-    if (0 == pid)
+    if (0 == pid1)
     { /* processing for child == reader */
         printf("The First Reader process begins.\n");
 
-        for (i_child = 0; i_child < run_length * 2; i_child++)
+        for (i_child = 0; i_child < run_length; i_child++)
         {
-            P(semid, buf_space);
+            P(semid, buf_used);
             value = buffer[*out];
             *out = (*out + 1) % BUF_SIZE;
             printf("First Reader's report: item %2d == %2d\n", i_child, value);
@@ -133,13 +133,13 @@ int main(void)
         exit (0);
     }
 
-    if (-1 == (pid = fork())) /* check for error in spawning child process */
+    if (-1 == (pid2 = fork())) /* check for error in spawning child process */
     {
         perror("error in fork");
         exit(1);
     }
 
-    if (pid == 0)
+    if (pid2 == 0)
     {
         printf("The First Writer process begins.\n");
 
@@ -151,43 +151,43 @@ int main(void)
             printf("First Writer's report: item %2d put in buffer\n", j_child);
             if ((j_child % 4) == 0)
                 sleep(1); /* take time to generate every fourth element */
-            V(semid, buf_space);
+            V(semid, buf_used);
         }
         printf("First Writer done.\n");
         exit(0);
     }
 
-    // if (-1 == (pid = fork())) /* check for error in spawning child process */
-    // {
-    //     perror("error in fork");
-    //     exit(1);
-    // }
-
-    // if (0 == pid)
-    // { /* processing for child == reader */
-    //     printf("The Second Reader process begins.\n");
-
-    //     for (i_child = 0; i_child < run_length; i_child++)
-    //     {
-    //         P(semid, buf_space);
-    //         value = buffer[*out];
-    //         *out = (*out + 1) % BUF_SIZE;
-    //         printf("Second Reader's report: item %2d == %2d\n", i_child, value);
-    //         if ((i_child % 3) == 1)
-    //             sleep(1); /* take time to process every third element */
-    //         V(semid, buf_space);
-    //     }
-    //     printf("Second Reader done.\n");
-    //     exit (0);
-    // }
-
-    if (-1 == (pid = fork())) /* check for error in spawning child process */
+    if (-1 == (pid3 = fork())) /* check for error in spawning child process */
     {
         perror("error in fork");
         exit(1);
     }
 
-    if (pid == 0)
+    if (0 == pid3)
+    { /* processing for child == reader */
+        printf("The Second Reader process begins.\n");
+
+        for (i_child = 0; i_child < run_length; i_child++)
+        {
+            P(semid, buf_used);
+            value = buffer[*out];
+            *out = (*out + 1) % BUF_SIZE;
+            printf("Second Reader's report: item %2d == %2d\n", i_child, value);
+            if ((i_child % 3) == 1)
+                sleep(1); /* take time to process every third element */
+            V(semid, buf_space);
+        }
+        printf("Second Reader done.\n");
+        exit (0);
+    }
+
+    if (-1 == (pid4 = fork())) /* check for error in spawning child process */
+    {
+        perror("error in fork");
+        exit(1);
+    }
+
+    if (pid4 == 0)
     {
         printf("The Second Writer process begins.\n");
 
@@ -199,16 +199,16 @@ int main(void)
             printf("Second Writer's report: item %2d put in buffer\n", j_child);
             if ((j_child % 4) == 0)
                 sleep(1); /* take time to generate every fourth element */
-            V(semid, buf_space);
+            V(semid, buf_used);
         }
         printf("Second Writer done.\n");
         exit(0);
     }
 
-    wait(&pid);
-    wait(&pid);
-    wait(&pid);
-    wait(&pid);
+    wait(&pid1);
+    wait(&pid2);
+    wait(&pid3);
+    wait(&pid4);
 
     printf("All done.\n");
 

@@ -128,7 +128,7 @@ int main(int argc, char const *argv[])
     printf("R = A * B Matrix:\n");
     matrix_print(R);
 
-    // // clear memory
+    // clear memory
 
     jobqueue_free(queue);
     free(threads);

@@ -1,0 +1,9 @@
+C:\Users\bcs2.DCS17.000\Desktop\RAD\W01\RadioCheckbox\RadioCheckbox\bin\Debug\RadioCheckbox.exe.config
+C:\Users\bcs2.DCS17.000\Desktop\RAD\W01\RadioCheckbox\RadioCheckbox\bin\Debug\RadioCheckbox.exe
+C:\Users\bcs2.DCS17.000\Desktop\RAD\W01\RadioCheckbox\RadioCheckbox\bin\Debug\RadioCheckbox.pdb
+C:\Users\bcs2.DCS17.000\Desktop\RAD\W01\RadioCheckbox\RadioCheckbox\obj\Debug\RadioCheckbox.csprojResolveAssemblyReference.cache
+C:\Users\bcs2.DCS17.000\Desktop\RAD\W01\RadioCheckbox\RadioCheckbox\obj\Debug\RadioCheckbox.Form1.resources
+C:\Users\bcs2.DCS17.000\Desktop\RAD\W01\RadioCheckbox\RadioCheckbox\obj\Debug\RadioCheckbox.Properties.Resources.resources
+C:\Users\bcs2.DCS17.000\Desktop\RAD\W01\RadioCheckbox\RadioCheckbox\obj\Debug\RadioCheckbox.csproj.GenerateResource.Cache
+C:\Users\bcs2.DCS17.000\Desktop\RAD\W01\RadioCheckbox\RadioCheckbox\obj\Debug\RadioCheckbox.exe
+C:\Users\bcs2.DCS17.000\Desktop\RAD\W01\RadioCheckbox\RadioCheckbox\obj\Debug\RadioCheckbox.pdb
