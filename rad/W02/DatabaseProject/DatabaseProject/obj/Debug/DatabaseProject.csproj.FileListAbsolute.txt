@@ -1,0 +1,12 @@
+F:\assignments\rad\W02\DatabaseProject\DatabaseProject\bin\Debug\DatabaseProject.exe.config
+F:\assignments\rad\W02\DatabaseProject\DatabaseProject\bin\Debug\DatabaseProject.exe
+F:\assignments\rad\W02\DatabaseProject\DatabaseProject\bin\Debug\DatabaseProject.pdb
+F:\assignments\rad\W02\DatabaseProject\DatabaseProject\obj\Debug\DatabaseProject.csprojResolveAssemblyReference.cache
+F:\assignments\rad\W02\DatabaseProject\DatabaseProject\obj\Debug\DatabaseProject.Form1.resources
+F:\assignments\rad\W02\DatabaseProject\DatabaseProject\obj\Debug\DatabaseProject.Properties.Resources.resources
+F:\assignments\rad\W02\DatabaseProject\DatabaseProject\obj\Debug\DatabaseProject.csproj.GenerateResource.Cache
+F:\assignments\rad\W02\DatabaseProject\DatabaseProject\obj\Debug\DatabaseProject.exe
+F:\assignments\rad\W02\DatabaseProject\DatabaseProject\obj\Debug\DatabaseProject.pdb
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\DatabaseProject\DatabaseProject\bin\Debug\DatabaseProject.exe.config
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\DatabaseProject\DatabaseProject\obj\Debug\DatabaseProject.exe
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\DatabaseProject\DatabaseProject\obj\Debug\DatabaseProject.pdb

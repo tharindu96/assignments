@@ -1,0 +1,10 @@
+F:\assignments\rad\W02\TestForm\TestForm\bin\Debug\TestForm.exe.config
+F:\assignments\rad\W02\TestForm\TestForm\bin\Debug\TestForm.exe
+F:\assignments\rad\W02\TestForm\TestForm\bin\Debug\TestForm.pdb
+F:\assignments\rad\W02\TestForm\TestForm\obj\Debug\TestForm.csprojResolveAssemblyReference.cache
+F:\assignments\rad\W02\TestForm\TestForm\obj\Debug\TestForm.Form1.resources
+F:\assignments\rad\W02\TestForm\TestForm\obj\Debug\TestForm.Form2.resources
+F:\assignments\rad\W02\TestForm\TestForm\obj\Debug\TestForm.Properties.Resources.resources
+F:\assignments\rad\W02\TestForm\TestForm\obj\Debug\TestForm.csproj.GenerateResource.Cache
+F:\assignments\rad\W02\TestForm\TestForm\obj\Debug\TestForm.exe
+F:\assignments\rad\W02\TestForm\TestForm\obj\Debug\TestForm.pdb
