@@ -1,0 +1,9 @@
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\KMeans\KMeans\bin\Debug\KMeans.exe.config
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\KMeans\KMeans\bin\Debug\KMeans.exe
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\KMeans\KMeans\bin\Debug\KMeans.pdb
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\KMeans\KMeans\obj\Debug\KMeans.csprojResolveAssemblyReference.cache
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\KMeans\KMeans\obj\Debug\KMeans.Form1.resources
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\KMeans\KMeans\obj\Debug\KMeans.Properties.Resources.resources
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\KMeans\KMeans\obj\Debug\KMeans.csproj.GenerateResource.Cache
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\KMeans\KMeans\obj\Debug\KMeans.exe
+C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\KMeans\KMeans\obj\Debug\KMeans.pdb

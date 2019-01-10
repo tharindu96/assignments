@@ -1,0 +1,239 @@
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {border:0;padding:0;margin:0;}
+
+body {
+	min-width: 980px;
+	
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	line-height: 1.34;
+}
+
+#top-bar {
+	background: #3b5998;
+	background: -moz-linear-gradient(top, #415d8c 0%, #3b5998 10%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #415d8c 0%,#3b5998 10%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #415d8c 0%,#3b5998 10%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#415d8c', endColorstr='#3b5998',GradientType=0 ); /* IE6-9 */
+	height: 83px;
+	padding: 0;
+}
+
+#top-bar > .top-bar-holder {
+	width: 980px;
+	padding: 0;
+	margin: 0 auto;
+}
+
+#top-bar .logo-holder {
+	padding: 0;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+#top-bar .logo-holder > a {
+	display: inline-block;
+	margin-top: 30px;
+	margin-left: 9px;
+}
+
+#login-form .fb-login-field {
+	display: inline-block;
+}
+
+#login-form table {
+	margin-top: 11px;
+	margin-right: 5px;
+}
+
+#login-form td {
+	padding: 0;
+	padding-top: 2px;
+	padding-left: 14px;
+}
+
+#login-form label {
+	color: #fff;
+	display: block;
+	margin-bottom: 3px;
+}
+
+#login-form input[type="text"], #login-form input[type="password"] {
+	border-radius: 0;
+	width: 150px;
+	line-height: 13px;
+	border-color: #1d2a5b;
+	padding: 3px;
+	padding-bottom: 4px;
+	margin: 0;
+	border-width: 1px;
+}
+
+#login-form input[type="button"] {
+	border-radius: 0;
+	background-color: #4267b2;
+	border-color: #29487d;
+	border-width: 1px;
+	line-height: 18px;
+	color: #fff;
+	font-weight: bold;
+	font-size: 12px;
+	padding: 2px 6px;
+}
+
+#login-form input[type="button"]:hover {
+	cursor: pointer;
+	background-color: #365899;
+}
+
+#login-form input[type="button"]:focus {
+	box-shadow: none;
+}
+
+#login-form input[type="button"]:active {
+	background-color: #29487d;
+}
+
+#login-form td.added-padding {
+	padding-top: 5px;
+}
+
+#login-form .recover-link {
+	padding-top: 4px;
+	color: #9cb4d8;
+}
+
+#main-content {
+	min-height: 612px;
+}
+
+#main-content .gradient {
+	min-height: 530px;
+	background: url(/img/content-bg.png) 0 bottom repeat-x;
+	background: linear-gradient(white, #D3D8E8);
+}
+
+#main-content .main-left {
+	width: auto;
+	float: left;
+}
+
+#main-content .main-right {
+	max-width: 400px;
+	width: 100%;
+	float: right;
+}
+
+#main-content .content-holder {
+	width: 980px;
+	margin: 0 auto;
+}
+
+#main-content .hero-text {
+	color: #0e385f;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 29px;
+	margin-top: 40px;
+	width: 450px;
+	word-spacing: -1px;
+	margin-bottom: 0;
+}
+
+#main-content .intro-block {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#main-content .intro-block > p {
+	color: #1d2129;
+	font-size: 19px;
+}
+
+#main-content .mega-text {
+	color: #333;
+	font-weight: 600;
+	font-size: 36px;
+	margin-bottom: 5px;
+	display: block;
+}
+
+#main-content .registration p {
+	margin: 200px 0px auto auto;
+	width: 250px;
+	font-size: 2em;
+	color: #1d2129;
+}
+
+i.fb-banner {
+	width: 170px;
+	height: 34px;
+	background-image: url(/img/facebookb.png);
+	display: block;
+	background-position: 0 0;
+	background-size: 100% 100%;
+}
+
+#pageFooter {
+	color: #737373;
+	width: 980px;
+	margin: 0 auto;
+}
+
+#pageFooter ul {
+	list-style: none;
+}
+
+#pageFooter .localeSelectorList {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#pageFooter ._2pid {
+	padding-top: 8px;
+	margin-bottom: 0px;
+	padding-left: 0;
+}
+
+#pageFooter a {
+	color: #365899;
+}
+
+#pageFooter ._4ki > li {
+	padding-left: 10px;
+	display: inline-block;
+}
+
+#pageFooter ._4ki > li:first-child {
+	padding-left: 0px;
+}
+
+#pageFooter ._4ki._703 > li {
+    padding-left: 20px;
+}
+
+#pageFooter .pageFooterLinkList {
+
+    line-height: 1.6;
+	margin-left: -20px;
+	padding-left: 0;
+}
+
+#contentCurve {
+	border-bottom: 1px solid #dddfe2;
+	font-size: 1px;
+	height: 8px;
+	margin-bottom: 8px;
+}
+
+#pageFooter .copyright {
+    font-size: 11px;
+}
+.mvl {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
