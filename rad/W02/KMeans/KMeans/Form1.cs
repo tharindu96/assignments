@@ -17,14 +17,6 @@ namespace KMeans
         private const float POINT_SIZE = 5.0f;
         private const float CLUSTER_POINT_SIZE = 8.0f;
 
-        private static Brush[] CLUSTER_COLORS = new Brush[MAX_CLUSTERS] {
-            Brushes.Blue,
-            Brushes.Red,
-            Brushes.Green,
-            Brushes.Pink,
-            Brushes.Purple
-        };
-
         private enum APP_STATE
         {
             ADD_DATA_POINTS,
@@ -47,6 +39,20 @@ namespace KMeans
         private void drawPoint(Point v, Brush brush)
         {
             graphics.FillEllipse(brush, (float)v.x - POINT_SIZE / 2, (float)(pnlMain.Height - v.y) - POINT_SIZE / 2, POINT_SIZE, POINT_SIZE);
+        }
+
+        private void drawLine(Point a, Point b, Pen pen)
+        {
+            graphics.DrawLine(pen, (float)a.x, pnlMain.Height - (float)a.y, (float)b.x, pnlMain.Height - (float)b.y);
+        }
+
+        private void drawPolygon(List<Point> points, Pen pen)
+        {
+            for(int i = 0; i < points.Count; i++)
+            {
+                int j = (i + 1) % points.Count;
+                drawLine(points[i], points[j], pen);
+            }
         }
 
         private void drawClusterPoint(Point v, Brush brush)
@@ -85,6 +91,21 @@ namespace KMeans
                 int i = getCluster(p);
                 clusterPoints[i].addPoint(p);
             }
+            foreach (Cluster c in clusterPoints)
+            {
+                if (c.getPoints().Count > 0) continue;
+                foreach (Cluster d in clusterPoints)
+                {
+                    if (c == d || d.getPoints().Count == 0) continue;
+
+                    int k = d.getPoints().Count;
+
+                    Point t = d.getPoints()[k - 1];
+                    d.getPoints().RemoveAt(k - 1);
+
+                    c.addPoint(t);
+                }
+            }
             updateClustering();
         }
 
@@ -94,6 +115,7 @@ namespace KMeans
             foreach (Cluster c in clusterPoints)
             {
                 c.updateMean();
+                drawPolygon(c.getBoundary(), Pens.Black);
                 foreach (Point p in c.getPoints())
                 {
                     drawPoint(p, c.getBrush());
@@ -127,6 +149,10 @@ namespace KMeans
             else if (state == APP_STATE.ADD_CLUSTER_POINTS)
             {
                 btnNext.Enabled = (clusterPoints.Count > 0);
+            }
+            else if (state == APP_STATE.RUN_CLUSTERING)
+            {
+                btnNext.Enabled = true;
             } else
             {
                 btnNext.Enabled = false;
@@ -154,15 +180,10 @@ namespace KMeans
             }
             else if (state == APP_STATE.ADD_CLUSTER_POINTS)
             {
-                if (clusterPoints.Count >= MAX_CLUSTERS)
-                {
-                    MessageBox.Show("Exceeding maxium clusters of " + MAX_CLUSTERS);
-                    return;
-                }
                 if (clusterPoints.Count < dataPoints.Count)
                 {
-                    clusterPoints.Add(new Cluster(p, CLUSTER_COLORS[clusterPoints.Count]));
-                    drawClusterPoint(p, CLUSTER_COLORS[clusterPoints.Count - 1]);
+                    clusterPoints.Add(new Cluster(p, Brushes.Black));
+                    drawClusterPoint(p, Brushes.Black);
                 } else
                 {
                     MessageBox.Show("Should not have more cluster points than data points");
@@ -238,6 +259,26 @@ namespace KMeans
 
             return Math.Sqrt(Math.Pow(p.x - x, 2) + Math.Pow(p.y - y, 2));
         }
+
+        public static int orientation(Point p, Point q, Point r)
+        {
+            int val = (int)((q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y));
+            if (val == 0) return 0;  // colinear
+            return (val > 0) ? 1 : 2; // clock or counterclock wise
+        }
+
+        public static PointF[] getPointArray(List<Point> points)
+        {
+            int n = points.Count;
+            PointF[] x = new PointF[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                x[i] = new PointF((float)points[i].x, (float)points[i].y);
+            }
+
+            return x;
+        }
     }
 
     class Cluster
@@ -291,6 +332,52 @@ namespace KMeans
         public List<Point> getPoints()
         {
             return points;
+        }
+
+        public List<Point> getBoundary()
+        {
+            List<Point> b = new List<Point>();
+
+            int l = getLeftMost();
+            int n = points.Count;
+
+            if (n == 0) return b;
+
+            int p = l;
+            int q;
+            do
+            {
+                b.Add(points[p]);
+
+                q = (p + 1) % n;
+
+                for (int i = 0; i < n; i++)
+                {
+                    if (Point.orientation(points[p], points[i], points[q]) == 2)
+                        q = i;
+                }
+
+                p = q;
+            } while (p != l);
+
+            return b;
+        }
+
+
+        private int getLeftMost()
+        {
+            if (points.Count == 0) return -1;
+            double x = points[0].x;
+            int i = 0;
+            for(int j = 1; j < points.Count; j++)
+            {
+                if (points[j].x < x)
+                {
+                    x = points[j].x;
+                    i = j;
+                }
+            }
+            return i;
         }
 
         public Brush getBrush()
