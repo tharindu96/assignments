@@ -1,0 +1,9 @@
+C:\Users\bcs2\Desktop\sc9916\Visual studio Projects\Group8_work\Group8_work\bin\Debug\Group8_work.exe.config
+C:\Users\bcs2\Desktop\sc9916\Visual studio Projects\Group8_work\Group8_work\bin\Debug\Group8_work.exe
+C:\Users\bcs2\Desktop\sc9916\Visual studio Projects\Group8_work\Group8_work\bin\Debug\Group8_work.pdb
+C:\Users\bcs2\Desktop\sc9916\Visual studio Projects\Group8_work\Group8_work\obj\Debug\Group8_work.csprojResolveAssemblyReference.cache
+C:\Users\bcs2\Desktop\sc9916\Visual studio Projects\Group8_work\Group8_work\obj\Debug\Group8_work.Form1.resources
+C:\Users\bcs2\Desktop\sc9916\Visual studio Projects\Group8_work\Group8_work\obj\Debug\Group8_work.Properties.Resources.resources
+C:\Users\bcs2\Desktop\sc9916\Visual studio Projects\Group8_work\Group8_work\obj\Debug\Group8_work.csproj.GenerateResource.Cache
+C:\Users\bcs2\Desktop\sc9916\Visual studio Projects\Group8_work\Group8_work\obj\Debug\Group8_work.exe
+C:\Users\bcs2\Desktop\sc9916\Visual studio Projects\Group8_work\Group8_work\obj\Debug\Group8_work.pdb
