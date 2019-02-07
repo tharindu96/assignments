@@ -254,7 +254,8 @@ namespace MatrixChain
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    ret.SetCell(i, j, multiplyCell(A, B, i, j));
+                    int h = multiplyCell(A, B, i, j);
+                    ret.SetCell(i, j, h);
                 }
             }
             return ret;

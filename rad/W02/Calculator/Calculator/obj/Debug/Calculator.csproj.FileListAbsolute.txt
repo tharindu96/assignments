@@ -8,3 +8,13 @@ C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\Calculator\Calculator\obj\Deb
 C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.Cache
 C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\Calculator\Calculator\obj\Debug\Calculator.exe
 C:\Users\bcs2\Documents\sc9935\assignments\rad\W02\Calculator\Calculator\obj\Debug\Calculator.pdb
+C:\Users\thari\Documents\assignments\rad\W02\Calculator\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\thari\Documents\assignments\rad\W02\Calculator\Calculator\bin\Debug\Calculator.exe
+C:\Users\thari\Documents\assignments\rad\W02\Calculator\Calculator\bin\Debug\Calculator.pdb
+C:\Users\thari\Documents\assignments\rad\W02\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\thari\Documents\assignments\rad\W02\Calculator\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\thari\Documents\assignments\rad\W02\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\thari\Documents\assignments\rad\W02\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\Users\thari\Documents\assignments\rad\W02\Calculator\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\thari\Documents\assignments\rad\W02\Calculator\Calculator\obj\Debug\Calculator.exe
+C:\Users\thari\Documents\assignments\rad\W02\Calculator\Calculator\obj\Debug\Calculator.pdb

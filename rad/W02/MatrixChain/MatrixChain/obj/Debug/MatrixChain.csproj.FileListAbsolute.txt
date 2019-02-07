@@ -38,3 +38,13 @@ E:\MatrixChain\MatrixChain\obj\Debug\MatrixChain.csprojResolveAssemblyReference.
 E:\MatrixChain\MatrixChain\obj\Debug\MatrixChain.Form1.resources
 E:\MatrixChain\MatrixChain\obj\Debug\MatrixChain.Properties.Resources.resources
 E:\MatrixChain\MatrixChain\obj\Debug\MatrixChain.csproj.GenerateResource.Cache
+C:\Users\thari\Documents\assignments\rad\W02\MatrixChain\MatrixChain\bin\Debug\MatrixChain.exe.config
+C:\Users\thari\Documents\assignments\rad\W02\MatrixChain\MatrixChain\bin\Debug\MatrixChain.exe
+C:\Users\thari\Documents\assignments\rad\W02\MatrixChain\MatrixChain\bin\Debug\MatrixChain.pdb
+C:\Users\thari\Documents\assignments\rad\W02\MatrixChain\MatrixChain\obj\Debug\MatrixChain.csprojAssemblyReference.cache
+C:\Users\thari\Documents\assignments\rad\W02\MatrixChain\MatrixChain\obj\Debug\MatrixChain.Form1.resources
+C:\Users\thari\Documents\assignments\rad\W02\MatrixChain\MatrixChain\obj\Debug\MatrixChain.Properties.Resources.resources
+C:\Users\thari\Documents\assignments\rad\W02\MatrixChain\MatrixChain\obj\Debug\MatrixChain.csproj.GenerateResource.cache
+C:\Users\thari\Documents\assignments\rad\W02\MatrixChain\MatrixChain\obj\Debug\MatrixChain.csproj.CoreCompileInputs.cache
+C:\Users\thari\Documents\assignments\rad\W02\MatrixChain\MatrixChain\obj\Debug\MatrixChain.exe
+C:\Users\thari\Documents\assignments\rad\W02\MatrixChain\MatrixChain\obj\Debug\MatrixChain.pdb
