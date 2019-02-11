@@ -1,0 +1,16 @@
+#main-carousel .carousel-item img {
+    width: 100%;
+    object-fit: cover;
+}
+
+#about {
+    margin-top: 4em;
+}
+
+#services {
+    margin-top: 4em;
+}
+
+#what-we-do {
+    margin-top: 5em;
+}
