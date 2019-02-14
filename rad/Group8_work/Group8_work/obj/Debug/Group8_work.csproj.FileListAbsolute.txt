@@ -35,3 +35,13 @@ C:\Users\thari\Desktop\Group8_work\Group8_work\obj\Debug\Group8_work.csproj.Gene
 C:\Users\thari\Desktop\Group8_work\Group8_work\obj\Debug\Group8_work.csproj.CoreCompileInputs.cache
 C:\Users\thari\Desktop\Group8_work\Group8_work\obj\Debug\Group8_work.exe
 C:\Users\thari\Desktop\Group8_work\Group8_work\obj\Debug\Group8_work.pdb
+C:\Users\thari\Documents\assignments\rad\Group8_work\Group8_work\bin\Debug\Group8_work.exe.config
+C:\Users\thari\Documents\assignments\rad\Group8_work\Group8_work\bin\Debug\Group8_work.exe
+C:\Users\thari\Documents\assignments\rad\Group8_work\Group8_work\bin\Debug\Group8_work.pdb
+C:\Users\thari\Documents\assignments\rad\Group8_work\Group8_work\obj\Debug\Group8_work.csprojAssemblyReference.cache
+C:\Users\thari\Documents\assignments\rad\Group8_work\Group8_work\obj\Debug\Group8_work.Form1.resources
+C:\Users\thari\Documents\assignments\rad\Group8_work\Group8_work\obj\Debug\Group8_work.Properties.Resources.resources
+C:\Users\thari\Documents\assignments\rad\Group8_work\Group8_work\obj\Debug\Group8_work.csproj.GenerateResource.cache
+C:\Users\thari\Documents\assignments\rad\Group8_work\Group8_work\obj\Debug\Group8_work.csproj.CoreCompileInputs.cache
+C:\Users\thari\Documents\assignments\rad\Group8_work\Group8_work\obj\Debug\Group8_work.exe
+C:\Users\thari\Documents\assignments\rad\Group8_work\Group8_work\obj\Debug\Group8_work.pdb

@@ -16,7 +16,6 @@ namespace Group8_work
     {
         bool keepClustering = true;
         int MAX_ITERATIONS = 100;
-        int MAX_CLUSTERS = 20;
         int MAX_THREADS = Environment.ProcessorCount * 4;
 
         bool loaded = false;
@@ -46,7 +45,7 @@ namespace Group8_work
 
         private void btnConvert_Click(object sender, EventArgs e)
         {
-            initClustering();
+            if (!initClustering()) return;
             runClustering();
             drawBitmap();
             pbProgress.Value = 0;
@@ -98,15 +97,21 @@ namespace Group8_work
             mClusteringWorkload.Add(new Workload(w * (MAX_THREADS - 1), mColorPoints.Count - 1));
         }
 
-        private void initClustering()
+        private bool initClustering()
         {
-            if (!loaded) return;
+            if (!loaded) return false;
             
             mClusters.Clear();
             HashSet<ColorPoint> mSet = new HashSet<ColorPoint>();
             Random rand = new Random();
 
-            for (int i = 0; i < MAX_CLUSTERS; i++)
+            int cluserCount;
+            if (!int.TryParse(txtClusterCount.Text, out cluserCount)) {
+                MessageBox.Show("Number of Clusters should be an integer!");
+                return false;
+            }
+
+            for (int i = 0; i < cluserCount; i++)
             {
                 ColorPoint p = mColorPoints[rand.Next(0, mColorPoints.Count)];
                 while (mSet.Contains(p))
@@ -119,6 +124,7 @@ namespace Group8_work
             updateClusteringWorkload();
 
             keepClustering = true;
+            return true;
         }
 
         private void runClustering()

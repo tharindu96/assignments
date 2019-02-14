@@ -37,6 +37,8 @@
             this.btnSaveImage = new System.Windows.Forms.Button();
             this.sfd_image = new System.Windows.Forms.SaveFileDialog();
             this.pbProgress = new System.Windows.Forms.ProgressBar();
+            this.lblClusterCount = new System.Windows.Forms.Label();
+            this.txtClusterCount = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb02)).BeginInit();
             this.SuspendLayout();
@@ -65,7 +67,7 @@
             // 
             // btnLoadImage
             // 
-            this.btnLoadImage.Location = new System.Drawing.Point(24, 649);
+            this.btnLoadImage.Location = new System.Drawing.Point(15, 694);
             this.btnLoadImage.Margin = new System.Windows.Forms.Padding(6);
             this.btnLoadImage.Name = "btnLoadImage";
             this.btnLoadImage.Size = new System.Drawing.Size(150, 44);
@@ -77,7 +79,7 @@
             // btnConvert
             // 
             this.btnConvert.Enabled = false;
-            this.btnConvert.Location = new System.Drawing.Point(186, 649);
+            this.btnConvert.Location = new System.Drawing.Point(177, 694);
             this.btnConvert.Margin = new System.Windows.Forms.Padding(6);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(150, 44);
@@ -89,7 +91,7 @@
             // btnClear
             // 
             this.btnClear.Enabled = false;
-            this.btnClear.Location = new System.Drawing.Point(1046, 649);
+            this.btnClear.Location = new System.Drawing.Point(1046, 694);
             this.btnClear.Margin = new System.Windows.Forms.Padding(6);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(150, 44);
@@ -107,7 +109,7 @@
             // btnSaveImage
             // 
             this.btnSaveImage.Enabled = false;
-            this.btnSaveImage.Location = new System.Drawing.Point(345, 649);
+            this.btnSaveImage.Location = new System.Drawing.Point(336, 694);
             this.btnSaveImage.Name = "btnSaveImage";
             this.btnSaveImage.Size = new System.Drawing.Size(163, 44);
             this.btnSaveImage.TabIndex = 5;
@@ -117,16 +119,35 @@
             // 
             // pbProgress
             // 
-            this.pbProgress.Location = new System.Drawing.Point(514, 649);
+            this.pbProgress.Location = new System.Drawing.Point(505, 694);
             this.pbProgress.Name = "pbProgress";
-            this.pbProgress.Size = new System.Drawing.Size(523, 44);
+            this.pbProgress.Size = new System.Drawing.Size(532, 44);
             this.pbProgress.TabIndex = 6;
+            // 
+            // lblClusterCount
+            // 
+            this.lblClusterCount.AutoSize = true;
+            this.lblClusterCount.Location = new System.Drawing.Point(12, 652);
+            this.lblClusterCount.Name = "lblClusterCount";
+            this.lblClusterCount.Size = new System.Drawing.Size(208, 25);
+            this.lblClusterCount.TabIndex = 7;
+            this.lblClusterCount.Text = "Number of Clusters: ";
+            // 
+            // txtClusterCount
+            // 
+            this.txtClusterCount.Location = new System.Drawing.Point(226, 649);
+            this.txtClusterCount.Name = "txtClusterCount";
+            this.txtClusterCount.Size = new System.Drawing.Size(72, 31);
+            this.txtClusterCount.TabIndex = 8;
+            this.txtClusterCount.Text = "10";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1211, 708);
+            this.ClientSize = new System.Drawing.Size(1211, 750);
+            this.Controls.Add(this.txtClusterCount);
+            this.Controls.Add(this.lblClusterCount);
             this.Controls.Add(this.pbProgress);
             this.Controls.Add(this.btnSaveImage);
             this.Controls.Add(this.btnClear);
@@ -140,6 +161,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pb01)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb02)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -154,6 +176,8 @@
         private System.Windows.Forms.Button btnSaveImage;
         private System.Windows.Forms.SaveFileDialog sfd_image;
         private System.Windows.Forms.ProgressBar pbProgress;
+        private System.Windows.Forms.Label lblClusterCount;
+        private System.Windows.Forms.TextBox txtClusterCount;
     }
 }
 
