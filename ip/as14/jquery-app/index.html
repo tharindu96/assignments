@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" name="text" id="text" value="">
+    <p>Hello <span id="res"></span>!</p>    
+    <script src="./jquery.js"></script>
+    <script type="text/javascript">
+    
+    $(function() {
+        var inp = $('#text');
+        var outp = $('#res');
+
+        inp.keyup(function(e) {
+            outp.text(inp.val());
+        });
+    });
+
+    </script>
+</body>
+</html>
