@@ -9,3 +9,11 @@
 ## Ubuntu
 
 `export CLASSPATH=$CLASSPATH:/usr/share/java/mysql-connector.jar`
+
+
+## Adding Proxy Setting
+
+```bash
+chmod +x ./proxy.sh
+sudo ./proxy.sh
+```
