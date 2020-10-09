@@ -1,4 +1,5 @@
 .vscode
+.DS_Store
 
 /oop/netbeans/TestApp/nbproject/private/
 /oop/as04/p07/build/
