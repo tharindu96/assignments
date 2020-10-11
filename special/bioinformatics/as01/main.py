@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 import re
+import sys
 
 MAPPING_FILE='mapping.txt'
 
@@ -48,8 +49,12 @@ def process_input_string(s, dic):
             sp = i + (j * 3)
             ep = i + ((j+1) * 3)
             sstr = s[sp:ep]
-            tr = dic[sstr]
-            tarr.append(tr)
+            try:
+                tr = dic[sstr]
+                tarr.append(tr)
+            except:
+                print("Invalid Input Sequence!")
+                sys.exit(1)
         frames.append(" ".join(tarr))
     return frames
 
