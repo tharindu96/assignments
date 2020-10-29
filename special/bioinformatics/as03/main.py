@@ -1,24 +1,25 @@
-MISMATCH = 0
-MATCH = 1
-GAP = -1
-
 
 class NWMatrix:
 
-    def __init__(self, A, B):
+    def __init__(self, A, B, match_score, missmatch_score, gap_penalty):
+        
         self.rows = len(B) + 1
         self.cols = len(A) + 1
         self.A = A
         self.B = B
+        self.score = match_score
+        self.mscore = missmatch_score
+        self.gap = gap_penalty
+
         self.M = [[None for _ in range(self.cols)] for _ in range(self.rows)] 
         self.set(0, 0, 0)
         for i in range(max(self.rows, self.cols)):
             try:
-                self.set(0, i, GAP * i)
+                self.set(0, i, self.gap * i)
             except:
                 pass
             try:
-                self.set(i, 0, GAP * i)
+                self.set(i, 0, self.gap * i)
             except:
                 pass
 
@@ -36,19 +37,19 @@ class NWMatrix:
             raise Exception("invalid index access")
         self.M[i][j] = v
 
-def calculate_score(a, b):
+def calculate_score(M, a, b):
     if a == b:
-        return MATCH
+        return M.score
     else:
-        return MISMATCH
+        return M.mscore
 
 def calculate_matrix_values(M):
     for i in range(1, M.rows):
         for j in range(1, M.cols):
             val = max(
-                M.get(i - 1, j - 1) + calculate_score(M.A[j - 1], M.B[i - 1]),
-                M.get(i, j - 1) + GAP,
-                M.get(i - 1, j) + GAP
+                M.get(i - 1, j - 1) + calculate_score(M, M.A[j - 1], M.B[i - 1]),
+                M.get(i, j - 1) + M.gap,
+                M.get(i - 1, j) + M.gap
             )
             M.set(i, j, val)
 
@@ -64,13 +65,18 @@ def get_possible_indexes(M, i, j):
     # return indexes
 
     indexes = []
-    space = [(i-1, j), (i, j-1)]
+    space = []
+    if i - 1 >= 0:
+        space.append((i-1, j))
+    if j - 1 >= 0:
+        space.append((i, j - 1))
     bmax = None
-    if M.A[j-1] == M.B[i-1] and not (i-1,j-1) in indexes:
-        indexes.append((i-1, j-1))
-        bmax = M.get(i-1, j-1)
-    else:
-        space.append((i-1, j-1))
+    if not (i, j) == (0, 0):
+        if M.A[j-1] == M.B[i-1] and not (i-1,j-1) in indexes:
+            indexes.append((i-1, j-1))
+            bmax = M.get(i-1, j-1)
+        else:
+            space.append((i-1, j-1))
     m = max(list(map(lambda s: M.get(s[0], s[1]), space)))
     if bmax != None and bmax >= m:
         return indexes
@@ -78,34 +84,6 @@ def get_possible_indexes(M, i, j):
         if M.get(s[0], s[1]) == m:
             indexes.append(s)
     return indexes
-    
-
-def find_paths(M):
-    """
-    find paths from lower right (N-1, M-1) to upper left (0, 0)
-    for a given index if not (0, 0):
-        add the highest of the 3 neighbours to the potential list
-        if in the given index the strings match add the diagonal to the potential list if not present
-        [((i, j), (pi, pj)), ...]
-        (i_maxtrix_column, j_matrix_row)
-    """
-    i, j = M.rows - 1, M.cols - 1
-    END = (0, 0)
-    START = (i, j)
-    path_queue = [START]
-    paths = []
-    while len(path_queue) > 0:
-        p = path_queue.pop(0)
-        if p == END:
-            continue
-        (i, j) = p
-        pp = get_possible_indexes(M, i, j)
-        for x in pp:
-            px = (x, p)
-            if not px in paths:
-                paths.append(px)
-            path_queue.append(x)
-    return paths
 
 def get_direction(p, q):
     x = abs(p[0] - q[0])
@@ -119,6 +97,9 @@ def get_direction(p, q):
 
 def get_next_index(d):
     return len(d) + 1
+
+def print_status(n):
+    print("# of paths in stack: {}".format(n))
 
 def find_sequences(M):
 
@@ -159,11 +140,22 @@ def print_matrix(M):
         print(x)
 
 if __name__ == "__main__":
+
+    sc = int(input("Enter Match Score: "))
+    msc = int(input("Enter Miss Match Score: "))
+    gp = int(input("Enter Gap Penalty: "))
+    
     S1 = input("Enter Sequence 1: ")
     S2 = input("Enter Sequence 2: ")
-    M = NWMatrix(S1, S2)
+    print("Generating Matrix...", end="")
+    M = NWMatrix(S1, S2, sc, msc, gp)
+    print("Done")
+    print("Calculating Matrix Values...", end="")
     calculate_matrix_values(M)
+    print("Done")
+    print("Finding Sequences...", end="")
     seqs = find_sequences(M)
+    print("Done")
     print("Matches:")
     if len(seqs) == 0:
         print("No Matches Found!")
@@ -172,11 +164,3 @@ if __name__ == "__main__":
         print("Sequence 1: {}".format(seq[0]))
         print("Sequence 2: {}".format(seq[1]))
         print("---------------------------")
-
-
-# paths = find_paths(M)
-
-
-# for p in paths:
-#     print("{} -> {} | {} -> {}".format(p[1], p[0], M.get(p[1][0], p[1][1]), M.get(p[0][0], p[0][1])))
-
