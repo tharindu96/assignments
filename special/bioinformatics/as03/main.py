@@ -103,6 +103,73 @@ def print_status(n):
 
 def find_sequences(M):
 
+    """
+          A   C   T   C
+     | - - - - - - - - - 
+     | 0  -1  -2  -3  -4
+   A | -1  1   0  -1  -2
+   C | -2  0   2   2   0
+   A | -3  -1  1   2   1
+   G | -4  -2  0   1   2
+
+    queue -> [ ((4,4), ("", "")) ]
+
+    c[0] -> (4, 4)
+
+    pp -> [ (3, 3) ]
+
+    queue -> [ ((3,3), ("C", "G")) ]
+
+    c[0] -> (3, 3)
+    A -> "C"
+    B -> "G"
+
+    pp -> [ (2, 2), (2, 3) ]
+
+    queue -> [ () ]
+
+--------------------------------------------------------------------
+
+    Matrix (5x5)
+
+    queue = [ ( (4, 4), ("", "") ) ]
+    END = (0, 0)
+
+    while len(queue) > 0:
+
+        c = queue.pop()
+        c[0] -> (4,4)
+        c[1] -> ("", "")
+
+        pp = [(4, 3), (3, 3)] <- find_possible_paths(c[0])
+
+        queue -> []
+
+        A = c[1][0]
+        B = c[1][1]
+
+        if c[0] = END:
+            print(A, B)
+            continue
+
+        for p in pp:
+
+            p -> (4, 3)
+
+            switch (find_dir(c[0], p)) -> "V" | "H" | "M" {
+                "V":
+                    queue.append((4, 3), (A+"-", B+kb))
+                    break
+                "H":
+                    queue.append((4, 3), (A+ka, B+"-"))
+                    break
+                "M":
+                    queue.append((4, 3), (A+ka, B+kb))
+                    break
+            }
+    
+    """
+
     i, j = M.rows - 1, M.cols - 1
     END = (0, 0)
     START = (i, j)
