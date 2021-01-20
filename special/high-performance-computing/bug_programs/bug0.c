@@ -14,6 +14,8 @@ int main(int argc, char *argv[])
   float update(int myoffset, int chunk, int myid);
   MPI_Status status;
 
+  MPI_Init(&argc, &argv);
+
   /***** Initializations *****/
   MPI_Comm_size(MPI_COMM_WORLD, &numtasks);
   if (numtasks % 4 != 0)
